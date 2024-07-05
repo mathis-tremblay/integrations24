@@ -20,6 +20,7 @@ function LoginPage() {
             navigate(appConsts.routerPaths.home.base)
             toast.success("User logged in Successfully", {
                 position: "top-center",
+                autoClose: 1000 // display for 1s
             });
         } catch (error) {
             console.log(error.message);
@@ -30,27 +31,28 @@ function LoginPage() {
         }
     };
 
+    //TODO: Mot de passe oublé
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Login</h3>
+            <h3>Se connecter</h3>
 
             <div className="mb-3">
-                <label>Email address</label>
+                <label>IDUL</label>
                 <input
                     type="email"
                     className="form-control"
-                    placeholder="Enter email"
+                    placeholder="idul@ulaval.ca"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
 
             <div className="mb-3">
-                <label>Password</label>
+                <label>Mot de passe</label>
                 <input
                     type="password"
                     className="form-control"
-                    placeholder="Enter password"
+                    placeholder="Entrez votre mot de passe"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
@@ -58,11 +60,11 @@ function LoginPage() {
 
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
-                    Submit
+                    Se connecter
                 </button>
             </div>
             <p className="forgot-password text-right">
-                New user <a href="/register">Register Here</a>
+                Pas encore inscrit ? <a href="/register">S'inscrire</a>
             </p>
         </form>
     );

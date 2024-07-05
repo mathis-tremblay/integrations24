@@ -11,11 +11,16 @@ function RegisterPage() {
     const [password, setPassword] = useState("");
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
+        if (password !== confirmPassword) { // add password check
+            toast.error("Les mots de passe ne sont pas identiques !", {position: "top-center"});
+            return;
+        }
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             const user = auth.currentUser;
@@ -28,8 +33,8 @@ function RegisterPage() {
                     photo:""
                 });
             }
-            console.log("User Registered Successfully!!");
-            toast.success("User Registered Successfully!!", {
+            console.log("Inscription réussie!!");
+            toast.success("Inscription réussie!!", {
                 position: "top-center",
             });
             navigate(appConsts.routerPaths.login)
@@ -43,60 +48,71 @@ function RegisterPage() {
 
     return (
         <form onSubmit={handleRegister}>
-            <h3>Sign Up</h3>
+            <h3>S'inscire</h3>
 
             <div className="mb-3">
-                <label>First name</label>
+                <label>Prénom</label>
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="First name"
+                    placeholder="Prénom"
                     onChange={(e) => setFname(e.target.value)}
                     required
                 />
             </div>
 
             <div className="mb-3">
-                <label>Last name</label>
+                <label>Nom</label>
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Last name"
+                    placeholder="Nom"
                     onChange={(e) => setLname(e.target.value)}
                 />
             </div>
 
             <div className="mb-3">
-                <label>Email address</label>
+                <label>IDUL</label>
                 <input
                     type="email"
                     className="form-control"
-                    placeholder="Enter email"
+                    placeholder="idul@ulaval.ca"
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
             </div>
 
             <div className="mb-3">
-                <label>Password</label>
+                <label>Mot de passe</label>
                 <input
                     type="password"
                     className="form-control"
-                    placeholder="Enter password"
+                    placeholder="Entrez votre mot de passe"
                     onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+            </div>
+            <div className="mb-3" >
+                <label>Confirmation</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Confirmez votre mot de passe"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
             </div>
 
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
-                    Sign Up
+                    S'inscrire
                 </button>
             </div>
             <p className="forgot-password text-right">
-                Already registered <a href="/login">Login</a>
+                Déjà inscrit ? <a href="/login">Se connecter</a>
             </p>
         </form>
     );
 }
+
 export default RegisterPage;
