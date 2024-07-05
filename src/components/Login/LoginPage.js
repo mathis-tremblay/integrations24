@@ -64,7 +64,10 @@ function LoginPage() {
                 </button>
             </div>
             <p className="forgot-password text-right">
-                Pas encore inscrit ? <a href="/register">S'inscrire</a>
+                Pas encore inscrit ? <a href={appConsts.routerPaths.register}>S'inscrire</a>
+            </p>
+            <p className="forgot-password text-left">
+                Mot de passe oublié ? <a href="/changePassword">Changer mot de passse</a>
             </p>
         </form>
     );

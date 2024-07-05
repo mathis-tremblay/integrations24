@@ -17,6 +17,7 @@ import MessagesPage from './components/Messages/MessagesPage';
 import { AuthProvider } from './reactHooks/AuthContext';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import ForgotPasswordPage from "./components/Login/ForgotPasswordPage";
 
 function App() {
     const [user, setUser] = useState();
@@ -40,6 +41,7 @@ function App() {
                                 element={user ? <Navigate to={appConsts.routerPaths.home.info} /> : <LoginPage /> }
                             />
                             <Route path={appConsts.routerPaths.login} element={<LoginPage />}/>
+                            <Route path={appConsts.routerPaths.changePassword} element={<ForgotPasswordPage/>}/>
                             <Route path={appConsts.routerPaths.register} element={<RegisterPage />}/>
                             <Route
                                 path={appConsts.routerPaths.home.base}
