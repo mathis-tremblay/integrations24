@@ -9,6 +9,7 @@ import InfoPage from "../components/Info/InfoPage";
 import HorairePage from "../components/Horaire/HorairePage";
 import CostumePage from "../components/Costume/CostumePage";
 import RegisterPage from "../components/Register/RegisterPage";
+import {AuthProvider} from "../reactHooks/AuthContext";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
     },
     {
         path: appConsts.routerPaths.home.base,
-        element: <ProtectedRoute> <MainApp/> </ProtectedRoute>,
+        element: <AuthProvider> <ProtectedRoute> <MainApp/> </ProtectedRoute> </AuthProvider>,
         errorElement: <ErrorPage/>,
         children: [
             {

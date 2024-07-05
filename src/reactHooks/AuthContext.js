@@ -5,25 +5,10 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
 
-    const [loggedIn, setLoggedIn] = useState(false);
-
-    const isLoggedIn = () => loggedIn;
-
-    async function loginUser(credentials) {
-        return fetch('http://localhost:8080/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(credentials)
-        })
-            .then(data => data.json())
-    }
+    const isLoggedIn = () => localStorage.getItem('loggedIn') === "true";
 
     const auth = {
         isLoggedIn,
-        loginUser,
-        setLoggedIn
     }
 
     return (

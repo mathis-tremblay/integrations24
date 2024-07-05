@@ -7,13 +7,14 @@ import {appConsts} from "../appCfg/appConsts";
 export default function ProtectedRoute({ children }){
     const navigate = useNavigate();
     const auth = useAuth();
+    const isLoggedIn = auth.isLoggedIn;
 
     // verify if the user is not logged in and trying to bypass login
     useEffect(() => {
-        if (!auth.isLoggedIn()){
+        if (!isLoggedIn()){
             navigate(appConsts.routerPaths.login)
         }
-    }, [auth, navigate]);
+    }, [isLoggedIn, navigate]);
 
-    return auth.isLoggedIn() ? children : null;
+    return isLoggedIn() ? children : null;
 }

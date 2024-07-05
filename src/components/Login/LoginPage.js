@@ -1,61 +1,71 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import {useAuth} from "../../reactHooks/AuthContext";
-import PropTypes from "prop-types";
-//import "./Login.css";
+import { auth } from "../firebase/firebase";
+import { toast } from "react-toastify";
+import {appConsts} from "../../appCfg/appConsts";
+import {useNavigate} from "react-router-dom";
 
-export default function LoginPage({setToken}) {
-
+function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const auth = useAuth();
-    const setLoggedIn = auth.setLoggedIn;
-    const loginUser = auth.loginUser;
+    const navigate = useNavigate();
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
-    }
-
-    const handleSubmit = async e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = await loginUser({
-            email,
-            password
-        });
-        setToken(token);
-        setLoggedIn(true)
-    }
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            localStorage.setItem("loggedIn", "true");
+            console.log("User logged in Successfully");
+            navigate(appConsts.routerPaths.home.base)
+            toast.success("User logged in Successfully", {
+                position: "top-center",
+            });
+        } catch (error) {
+            console.log(error.message);
+
+            toast.error(error.message, {
+                position: "bottom-center",
+            });
+        }
+    };
 
     return (
-        <div className="Login">
-            <Form onSubmit={handleSubmit}>
-                <Form.Group size="lg" controlId="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group size="lg" controlId="password">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </Form.Group>
-                <Button block size="lg" type="submit" disabled={!validateForm()}>
-                    Login
-                </Button>
-            </Form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <h3>Login</h3>
+
+            <div className="mb-3">
+                <label>Email address</label>
+                <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+
+            <div className="mb-3">
+                <label>Password</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+
+            <div className="d-grid">
+                <button type="submit" className="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+            <p className="forgot-password text-right">
+                New user <a href="/register">Register Here</a>
+            </p>
+        </form>
     );
 }
 
-LoginPage.propTypes = {
-    setToken: PropTypes.func.isRequired
-}
+export default LoginPage;
