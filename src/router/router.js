@@ -8,7 +8,7 @@ import MessagesPage from "../components/Messages/MessagesPage";
 import InfoPage from "../components/Info/InfoPage";
 import HorairePage from "../components/Horaire/HorairePage";
 import CostumePage from "../components/Costume/CostumePage";
-import RegisterPage from "../components/Register/RegisterPage";
+import RegisterPage from "../components/Login/RegisterPage";
 import {AuthProvider} from "../reactHooks/AuthContext";
 
 export const router = createBrowserRouter([
