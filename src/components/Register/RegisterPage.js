@@ -72,7 +72,7 @@ function RegisterPage() {
             </div>
 
             <div className="mb-3">
-                <label>IDUL</label>
+                <label>Email</label>
                 <input
                     type="email"
                     className="form-control"
