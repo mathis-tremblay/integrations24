@@ -4,6 +4,7 @@ import { auth } from "../firebase/firebase";
 import { toast } from "react-toastify";
 import {appConsts} from "../../appCfg/appConsts";
 import {useNavigate} from "react-router-dom";
+import "./AuthStyle.css"
 
 function LoginPage() {
     const [email, setEmail] = useState("");
@@ -31,9 +32,9 @@ function LoginPage() {
         }
     };
 
-    //TODO: Mot de passe oublé
     return (
-        <form onSubmit={handleSubmit}>
+        <div className="auth-wrapper">
+        <form onSubmit={handleSubmit} className="auth-inner">
             <h3>Se connecter</h3>
 
             <div className="mb-3">
@@ -73,8 +74,8 @@ function LoginPage() {
             <p className="forgot-password text-center">
                 Pas encore inscrit ? <a href={appConsts.routerPaths.register}>S'inscrire</a>
             </p>
-
         </form>
+        </div>
     );
 }
 
