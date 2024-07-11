@@ -1,7 +1,6 @@
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {appConsts} from "../../appCfg/appConsts";
-import {TabContext, TabList, TabPanel} from '@mui/lab';
-import {Box, Button, Divider, Grid, IconButton, Paper, Tab} from '@mui/material';
+import {TabContext, TabList} from '@mui/lab';
+import {Box, Button, Divider, Tab} from '@mui/material';
 import "./MainStyle.css"
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
