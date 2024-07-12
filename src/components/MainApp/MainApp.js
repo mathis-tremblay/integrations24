@@ -1,11 +1,10 @@
 import {appConsts} from "../../appCfg/appConsts";
-import {Button} from '@mui/material';
+import {Box, Button} from '@mui/material';
 import "./MainStyle.css"
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
 import SideBar from "./SideBar";
-
 
 export default function MainApp() {
     const navigate = useNavigate();
@@ -15,31 +14,38 @@ export default function MainApp() {
     }
 
     return (
-        <div className="main">
-
-
+        <Box sx={{display: "flex"}}>
             <SideBar/>
+            <Box
+                component="main"
+                sx={{flexGrow: 1, px: 6.5, py: 3}}
+            >
 
-            <Button
-                color="inherit"
-                onClick={handleLogout}
-                startIcon={<LogoutIcon sx={{marginLeft: 2}}/>}
-                sx={{ marginLeft: 'auto',
-                    marginRight: 0.5,
-                    marginTop: 0.5,
-                    backgroundColor: 'transparent',
-                    '&:hover': {
-                        backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                    },
-                    borderRadius: '50%',
-                    width: 45,
-                    height: 55,
-                    position: 'fixed', // Add this
-                    top: 0, // And this
-                    right: 0,
-                }}
-            />
-        </div>
-    )
+                <div style={{flex: 1,}}>
+                    <Outlet/>
+                </div>
 
+                <Button
+                    color="inherit"
+                    onClick={handleLogout}
+                    startIcon={<LogoutIcon sx={{marginLeft: 2}}/>}
+                    sx={{
+                        marginLeft: 'auto',
+                        marginRight: 0.5,
+                        marginTop: 0.5,
+                        backgroundColor: 'transparent',
+                        '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                        },
+                        borderRadius: '50%',
+                        width: 45,
+                        height: 55,
+                        position: 'fixed',
+                        top: 0,
+                        right: 0,
+                    }}
+                />
+            </Box>
+        </Box>
+    );
 }

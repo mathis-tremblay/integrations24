@@ -16,8 +16,10 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import ChatIcon from '@mui/icons-material/Chat';
 
-const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})(
-    ({theme, open}) => ({
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+        height: '100vh',
+        flexShrink: 0,
         '& .MuiDrawer-paper': {
             position: 'relative',
             whiteSpace: 'nowrap',
@@ -41,7 +43,6 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
         }
     })
 );
-
 
 const SideBar = () => {
     const [tab, setTab] = useState("")
@@ -73,38 +74,37 @@ const SideBar = () => {
     }
 
     return (
-        <Drawer variant='permanent' open={open} sx={{height: '100vh'}}>
+        <Drawer variant='permanent' open={open}>
             <Toolbar
                 variant={"dense"}
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-end',
-                    ml: 3.35
+                    flex: '0 0 auto',
+                    ml: {xs: 4.35, sm: 3.35}
                 }}
             >
                 {open ?
-                    <IconButton onClick={() => toggleDrawer()} sx={{marginRight: -2.5}}>
-                        <ChevronLeftIcon/>
+                    <IconButton onClick={() => toggleDrawer()} sx={{mr:-2.5}}>
+                        <ChevronLeftIcon />
                     </IconButton>
-                        :
-                    <IconButton onClick={() => toggleDrawer()}>
-                        <MenuIcon sx={{fontSize: '1.8rem'}}/>
+                    :
+                    <IconButton onClick={() => toggleDrawer()} sx={{ justifyContent: { xs: 'center', sm: 'flex-end' }}}>
+                        <MenuIcon sx={{ fontSize: '1.8rem' }} />
                     </IconButton>
                 }
-
             </Toolbar>
             <Divider />
 
-            <List component='nav' sx={{py:0}} value={tab}>
-
+            <List component='nav' sx={{ py: 0 }} value={tab}>
                 <ListItemButton
                     onClick={(event) => handleTabChange(event, appConsts.menus.infos)}
                 >
                     <ListItemIcon>
-                        <InfoIcon/>
+                        <InfoIcon />
                     </ListItemIcon>
-                    <ListItemText primary={appConsts.menus.infos} primaryTypographyProps={{ sx: { fontSize: '1.4rem' } }}/>
+                    <ListItemText primary={appConsts.menus.infos} primaryTypographyProps={{ sx: { fontSize: '1.4rem' } }} />
                 </ListItemButton>
 
                 <ListItemButton
