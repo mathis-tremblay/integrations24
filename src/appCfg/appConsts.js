@@ -18,5 +18,9 @@ export const appConsts = {
         horaire: 'Horaire',
         costume: 'Costume',
         messages: 'Messages',
+    },
+
+    infos: {
+        amountToPay: "69",
     }
 }

@@ -19,7 +19,6 @@ import ChatIcon from '@mui/icons-material/Chat';
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         height: '100vh',
-        flexShrink: 0,
         '& .MuiDrawer-paper': {
             position: 'relative',
             whiteSpace: 'nowrap',
