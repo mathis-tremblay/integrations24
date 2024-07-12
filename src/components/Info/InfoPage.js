@@ -29,13 +29,13 @@ export default function InfoPage () {
             <InfoDialog
                 title={"Informations générales (et importantes)"}
                 desc={"Lis sinon on t'aime un peu moins."}
-                text={texts.initRead}
+                text={texts.infoGenerales}
                 icon={<BlindIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
                 title={"Informations (très) importantes"}
                 desc={"Crois moi, ça vaut la peine de lire."}
-                text={texts.initRead}       // TODO: Change text
+                text={texts.infoImportantes}       // TODO: Change text
                 icon={<ReportProblemIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
