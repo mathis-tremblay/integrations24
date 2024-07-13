@@ -18,6 +18,7 @@ import {AuthProvider} from './reactHooks/AuthContext';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import ForgotPasswordPage from "./components/Login/ForgotPasswordPage";
+import {ConfirmProvider} from "material-ui-confirm";
 
 function App() {
     const [user, setUser] = useState();
@@ -27,39 +28,41 @@ function App() {
         });
     });
     return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    <Route
-                        path="*"
-                        element={<ErrorPage/>}
-                    />
-                    <Route
-                        path="/"
-                        element={user ? <Navigate to={appConsts.routerPaths.home.info}/> : <LoginPage/>}
-                    />
-                    <Route path={appConsts.routerPaths.login} element={<LoginPage/>}/>
-                    <Route path={appConsts.routerPaths.changePassword} element={<ForgotPasswordPage/>}/>
-                    <Route path={appConsts.routerPaths.register} element={<RegisterPage/>}/>
-                    <Route
-                        path={appConsts.routerPaths.home.base}
-                        element={user ? (
-                                <AuthProvider>
-                                    <ProtectedRoute>
-                                        <MainApp/>
-                                    </ProtectedRoute>
-                                </AuthProvider>)
-                            : (<Navigate to={appConsts.routerPaths.login}/>)}
-                    >
-                        <Route path={appConsts.routerPaths.home.info} element={<InfoPage/>}/>
-                        <Route path={appConsts.routerPaths.home.horaire} element={<HorairePage/>}/>
-                        <Route path={appConsts.routerPaths.home.costume} element={<CostumePage/>}/>
-                        <Route path={appConsts.routerPaths.home.messages} element={<MessagesPage/>}/>
-                    </Route>
-                </Routes>
-                <ToastContainer/>
-            </div>
-        </Router>
+        <ConfirmProvider>
+            <Router>
+                <div className="App">
+                    <Routes>
+                        <Route
+                            path="*"
+                            element={<ErrorPage/>}
+                        />
+                        <Route
+                            path="/"
+                            element={user ? <Navigate to={appConsts.routerPaths.home.info}/> : <LoginPage/>}
+                        />
+                        <Route path={appConsts.routerPaths.login} element={<LoginPage/>}/>
+                        <Route path={appConsts.routerPaths.changePassword} element={<ForgotPasswordPage/>}/>
+                        <Route path={appConsts.routerPaths.register} element={<RegisterPage/>}/>
+                        <Route
+                            path={appConsts.routerPaths.home.base}
+                            element={user ? (
+                                    <AuthProvider>
+                                        <ProtectedRoute>
+                                            <MainApp/>
+                                        </ProtectedRoute>
+                                    </AuthProvider>)
+                                : (<Navigate to={appConsts.routerPaths.login}/>)}
+                        >
+                            <Route path={appConsts.routerPaths.home.info} element={<InfoPage/>}/>
+                            <Route path={appConsts.routerPaths.home.horaire} element={<HorairePage/>}/>
+                            <Route path={appConsts.routerPaths.home.costume} element={<CostumePage/>}/>
+                            <Route path={appConsts.routerPaths.home.messages} element={<MessagesPage/>}/>
+                        </Route>
+                    </Routes>
+                    <ToastContainer/>
+                </div>
+            </Router>
+        </ConfirmProvider>
     );
 }
 

@@ -11,5 +11,16 @@ export const appConsts = {
             costume: '/home/costume',
             messages: '/home/messages',
         }
+    },
+
+    menus: {
+        infos: 'Informations',
+        horaire: 'Horaire',
+        costume: 'Costume',
+        messages: 'Messages',
+    },
+
+    infos: {
+        amountToPay: "69",
     }
 }
