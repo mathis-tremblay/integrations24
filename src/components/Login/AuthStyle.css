@@ -11,6 +11,38 @@
 
 .auth-inner .form-control:focus {
     border-color: rgb(164, 225, 109);
+    background: rgba(251, 250, 229, 0.75);
+}
+
+.auth-inner .btn.btn-primary {
+    background: rgba(85,136,38,0.75);
+    border-color: #ffff;
+}
+.auth-inner .btn.btn-primary:active {
+    background: rgba(85, 136, 38, 0.5);
+    border-color: #fff;
+}
+.auth-inner .btn.btn-primary:focus {
+    background: rgba(85, 136, 38, 0.6);
+    border-color: #fff;
+}
+.auth-inner .btn.btn-primary:hover {
+    background: rgba(75, 120, 34, 0.85);
+    border-color: #fff;
+}
+
+.auth-inner input {
+    background: rgba(251, 250, 229, 0.5);
+}
+/* Autofill override */
+.auth-inner input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgba(251, 250, 229, 0.75) inset !important;
+    box-shadow: 0 0 0 1000px rgba(251, 250, 229, 0.75) inset !important;
+    -webkit-text-fill-color: #000 !important; /* Ensures text color remains readable */
+}
+
+.auth-inner label {
+    color: #ffff;
 }
 
 .test {

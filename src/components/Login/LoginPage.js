@@ -38,9 +38,8 @@ function LoginPage() {
             <h3>Se connecter</h3>
 
             <div className="mb-3">
-                <label style={{"color": "#ffffff"}}>Email</label>
+                <label>Email</label>
                 <input
-                    style={{"background": "#FBFAE57C"}}
                     type="email"
                     className="form-control"
                     placeholder="idul@ulaval.ca"
@@ -50,9 +49,8 @@ function LoginPage() {
             </div>
 
             <div className="mb-3">
-                <label style={{"color": "#ffffff"}}>Mot de passe</label>
+                <label>Mot de passe</label>
                 <input
-                    style={{"background": "#FBFAE57C",}}
                     type="password"
                     className="form-control"
                     placeholder="Entrez votre mot de passe"
@@ -69,9 +67,7 @@ function LoginPage() {
 
 
             <div className="d-grid">
-                <button type="submit" className="btn btn-primary"
-                        style={{"background": "rgba(85,136,38,0.75)",
-                            "borderColor": "#ffff"}}>
+                <button type="submit" className="btn btn-primary">
                     Se connecter
                 </button>
             </div>
