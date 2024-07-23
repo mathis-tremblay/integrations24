@@ -2,6 +2,7 @@ import {useConfirm} from "material-ui-confirm";
 import {Button} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from "react";
+import "./HoraireDialogStyle.css"
 
 export default function HoraireDialog({ title, date, text, icon }) {
     const confirm = useConfirm();
@@ -29,6 +30,7 @@ export default function HoraireDialog({ title, date, text, icon }) {
                 //Do nothing
             })
     }
+
     return (
         <Button variant={'contained'}
                 size={'small'}

@@ -52,7 +52,7 @@ const SideBar = () => {
 
     const [tab, setTab] = useState("")
     const navigate = useNavigate();
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const toggleDrawer = () => {
         setOpen(!open);
