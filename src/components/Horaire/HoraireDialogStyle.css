@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(12, 1fr);
-    gap: 0 15px;
+    gap: 0 12px;
     width: 100%;
     height: 100%;
 }
@@ -21,7 +21,7 @@
     text-align: left;
 }
 
-.desc {
+.date {
     grid-area: 2 / 2 / 3 / 12;
     justify-self: start;
     align-self: start;
@@ -33,51 +33,28 @@
     justify-self: end;
     align-self: center;
 }
-.Header {
-    text-align: center;
-    padding: 5px;
-    margin: 0 130px 10px 130px;
-    background-color: rgba(85,136,38,0.90);
-    border: solid 1px #454849;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 18px;
-    color: white;
-}
 
 @media (max-width: 1200px) {
-    .Header {
-        font-size: 16px; /* for medium screens */
-        margin: 0 70px 10px 70px;
-    }
     .title {
         font-size: 16px;
     }
-    .desc {
+    .date {
         font-size: 13px;
     }
 }
 @media (max-width: 1000px) {
-    .Header {
-        font-size: 13px; /* for small screens */
-        margin: 0 20px 10px 30px;
-    }
     .title {
         font-size: 13px;
     }
-    .desc {
+    .date {
         font-size: 11px;
     }
 }
 @media (max-width: 800px) {
-    .Header {
-        font-size: 12px;
-        margin: 0 20px 10px 30px;
-    }
     .title {
         font-size: 12px;
     }
-    .desc {
+    .date {
         font-size: 10px;
     }
 }

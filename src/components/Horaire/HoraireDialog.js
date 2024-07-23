@@ -1,10 +1,10 @@
+import {useConfirm} from "material-ui-confirm";
 import {Button} from "@mui/material";
-import "./InfoDialogStyle.css"
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from "react";
-import {useConfirm} from 'material-ui-confirm';
+import "./HoraireDialogStyle.css"
 
-export default function InfoDialog({ title, desc, text, icon }) {
+export default function HoraireDialog({ title, date, text, icon }) {
     const confirm = useConfirm();
 
     const handleClick = () => {
@@ -25,11 +25,12 @@ export default function InfoDialog({ title, desc, text, icon }) {
         })
             .then(() => {
                 //Do nothing
-        })
+            })
             .catch(() => {
                 //Do nothing
             })
     }
+
     return (
         <Button variant={'contained'}
                 size={'small'}
@@ -41,13 +42,13 @@ export default function InfoDialog({ title, desc, text, icon }) {
                     color: 'white',
                     textTransform: 'none',
                     margin: 30
-        }}
+                }}
         >
             <div className="grid">
                 <div className="icon">{icon}</div>
                 <div className="title">{title}</div>
-                <div className="desc">{desc}</div>
-                <div className="arrow"><ChevronRightIcon/></div>
+                <div className="date">{date}</div>
+                <div className="arrow"><ExpandMoreIcon/></div>
             </div>
         </Button>
     )
