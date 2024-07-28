@@ -1,0 +1,21 @@
+.CenterContainer {
+    background-color: rgba(85, 136, 38, 0.70);
+    margin: 0 20% 0 20%;
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.CostumeHeader {
+    font-size: 26px;
+    color: white;
+    text-align: center;
+}
+
+.CostumeDialog {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}

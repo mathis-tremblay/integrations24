@@ -6,6 +6,8 @@ import {toast} from "react-toastify";
 import {appConsts} from "../../appCfg/appConsts";
 import {useNavigate} from "react-router-dom";
 import "./AuthStyle.css"
+import {getLeastUsedCostume} from "../../utils/costumes"
+
 
 function RegisterPage() {
     const [email, setEmail] = useState("");
@@ -27,11 +29,13 @@ function RegisterPage() {
             const user = auth.currentUser;
             console.log(user);
             if (user) {
+                const leastUsedCostume = await getLeastUsedCostume();
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
                     firstName: fname,
                     lastName: lname,
-                    photo: ""
+                    admin: false,
+                    costume: leastUsedCostume,
                 });
             }
             console.log("Inscription réussie!!");
