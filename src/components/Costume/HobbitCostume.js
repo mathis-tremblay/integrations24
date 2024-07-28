@@ -1,4 +1,4 @@
-import HelmetIcon from "../../images/helmet_icon.png"
+import DaggersIcon from "../../images/daggers_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
 import "./CostumePageStyle.css"
@@ -10,7 +10,7 @@ export default function HobbitCostume() {
         <List>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
@@ -23,7 +23,7 @@ export default function HobbitCostume() {
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
@@ -37,7 +37,7 @@ export default function HobbitCostume() {
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
@@ -50,7 +50,7 @@ export default function HobbitCostume() {
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
@@ -63,7 +63,7 @@ export default function HobbitCostume() {
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
@@ -76,7 +76,7 @@ export default function HobbitCostume() {
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={HelmetIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
