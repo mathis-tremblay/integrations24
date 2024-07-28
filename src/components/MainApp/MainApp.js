@@ -10,10 +10,10 @@ export default function MainApp() {
             <SideBar/>
             <Box
                 component="main"
-                sx={{flexGrow: 1, px: 2, py: 3}}
+                sx={{flexGrow: 1}}
             >
 
-                <div style={{flex: 1,}}>
+                <div style={{flex: 1}}>
                     <Outlet/>
                 </div>
             </Box>
