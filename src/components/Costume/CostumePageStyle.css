@@ -2,7 +2,7 @@
     background-color: rgba(85, 136, 38, 0.70);
     margin: 5% 10% 0 10%;
     display: flex;
-    height: 100%;
+    height: 80vh;
     border-radius: 20px;
     flex-direction: column;
     padding: 20px;
@@ -18,6 +18,25 @@
     font-size: 20px;
     color: white;
     text-align: left;
+}
+.CostumeDialog::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.CostumeDialog::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.3); /* Background color of the track */
+    border-radius: 20px; /* To make it rounded */
+}
+
+.CostumeDialog::-webkit-scrollbar-thumb {
+    background: #e4e4e4; /* Background color of the scrollbar itself */
+    border-radius: 20px; /* To make it rounded */
+    transition: background 0.3s;
+}
+
+.CostumeDialog::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5; /* Background color of the scrollbar on hover */
+    transition: background 0.3s;
 }
 
 @media (max-width: 1200px) {
