@@ -1,26 +1,26 @@
 import {getUserCostume} from "../../utils/costumes";
 import {useEffect, useState} from "react";
 import "./CostumePageStyle.css"
-import HobbitCostume from "./HobbitCostume";
-import NainCostume from "./NainCostume";
-import ElfCostume from "./ElfCostume";
-import EntCostume from "./EntCostume";
-import {isAdmin} from "../../utils/roles";
+import HobbitCostume from "./CostumeTypes/HobbitCostume";
+import NainCostume from "./CostumeTypes/NainCostume";
+import ElfCostume from "./CostumeTypes/ElfCostume";
+import EntCostume from "./CostumeTypes/EntCostume";
+import {isAdmin, isQuizzCompleted} from "../../utils/user";
 import CostumeAdminPage from "./CostumeAdminPage";
+import QuizzPage from "./QuizzPage";
 
 
 export default function CostumePage () {
     //TODO: Quizz
     const [costume, setCostume] = useState("");
-
     const [admin, setAdmin] = useState(false);
+    const [quizzCompleted, setQuizzCompleted] = useState(false)
 
     useEffect(() => {
         const fetchAdmin = async () => {
             const result = await isAdmin();
             setAdmin(result);
         }
-
         fetchAdmin().then();
     }, []);
 
@@ -28,23 +28,30 @@ export default function CostumePage () {
         async function fetchCostume() {
             const costume = await getUserCostume();
             setCostume(costume);
-            console.log(costume)
         }
-
         fetchCostume().then();
     }, []);
+
+    useEffect( () => {
+        async function fetchQuizzCompleted() {
+            const quizzCompleted = await isQuizzCompleted();
+            setQuizzCompleted(quizzCompleted);
+        }
+        fetchQuizzCompleted().then();
+    })
 
     return (
         <div>
             {admin ?
                 <CostumeAdminPage/> :
+                quizzCompleted ?
+                    <QuizzPage/> :
                 <div className="CenterContainer">
                     <div className="CostumeHeader">
                         Vous êtes un <b>{costume.toUpperCase()}</b>
                     </div>
                     <div className="CostumeDialog" style={{"marginTop": 3}}>
                         Il est indespensable pour tout {costume} d'avoir...
-
                     </div>
                     <div className="CostumeDialog">
                         {costume === "hobbit" ?

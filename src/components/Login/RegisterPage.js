@@ -36,6 +36,7 @@ function RegisterPage() {
                     lastName: lname,
                     admin: false,
                     costume: leastUsedCostume,
+                    quizzCompleted: false,
                 });
             }
             console.log("Inscription réussie!!");

@@ -1,90 +1,94 @@
-import BowIcon from "../../images/bow_icon.png"
+import DaggersIcon from "../../../images/daggers_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
-import "./CostumePageStyle.css"
+import "../CostumePageStyle.css"
 
 
-export default function ElfCostume() {
+export default function HobbitCostume() {
 
     return (
         <List>
             <ListItem>
                 <ListItemIcon>
-                    <img src={BowIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des longs cheveux (perruque ou pas).
+                        Une chemise rentré dans les pantalons de couleur 99±1% GΩ.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={BowIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Un arc de la forme y = cos(x)+1 {'(-4<x<4)'}
+                        Des pantalons ¾. La longueur entre le pantalon et le soulier doit être, en cm, de
+                        3u(t)+3/2r(t+1) à t=4.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={BowIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des oreilles pointues.
+                        Une veste pour pas avoir froid en traversant le Mordor.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={BowIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Un collier magique fait avec 30 goupilles de canette minimum.
+                        Des sandales avec du poil sur les pieds de 5cm.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={BowIcon}
+                    <img src={DaggersIcon}
                          alt={""}
                          style={{width: '40px', height: '40px'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une cape de couleur 5.5±0.5% MΩ avec <em>GELGIF</em> écrit en hexadécimal dessus.
+                        Une pipe pour fumer comme ton grand-père.
                     </div>
                 </ListItemText>
-            </ListItem><ListItem>
-            <ListItemIcon>
-                <img src={BowIcon}
-                     alt={""}
-                     style={{width: '40px', height: '40px'}}
-                />
-            </ListItemIcon>
-            <ListItemText>
-                <div className="CostumeDialog">
-                    Une pièce de vêtement en cuir brun ou noir.
-                </div>
-            </ListItemText>
-        </ListItem>
+            </ListItem>
+            <ListItem>
+                <ListItemIcon>
+                    <img src={DaggersIcon}
+                         alt={""}
+                         style={{width: '40px', height: '40px'}}
+                    />
+                </ListItemIcon>
+                <ListItemText>
+                    <div className="CostumeDialog">
+                        Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et une quote
+                        d'Innoncent en HEX :
+                        <em> Je n'en dirai pas plus, il faut quand même que ceux qui ont A+ méritent leur note!</em>
+                    </div>
+                </ListItemText>
+            </ListItem>
         </List>
     )
 }

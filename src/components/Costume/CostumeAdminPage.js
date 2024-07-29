@@ -1,12 +1,8 @@
-import {getUserCostume} from "../../utils/costumes";
-import {useEffect, useState} from "react";
 import "./CostumePageStyle.css"
-import HobbitCostume from "./HobbitCostume";
-import NainCostume from "./NainCostume";
-import ElfCostume from "./ElfCostume";
-import EntCostume from "./EntCostume";
-import {isAdmin} from "../../utils/roles";
-
+import HobbitCostume from "./CostumeTypes/HobbitCostume";
+import NainCostume from "./CostumeTypes/NainCostume";
+import ElfCostume from "./CostumeTypes/ElfCostume";
+import EntCostume from "./CostumeTypes/EntCostume";
 
 export default function CostumeAdminPage () {
 

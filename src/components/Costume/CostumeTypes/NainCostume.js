@@ -1,7 +1,7 @@
-import HelmetIcon from "../../images/helmet_icon.png"
+import HelmetIcon from "../../../images/helmet_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
-import "./CostumePageStyle.css"
+import "../CostumePageStyle.css"
 
 
 export default function NainCostume() {

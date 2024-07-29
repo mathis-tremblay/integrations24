@@ -1,91 +1,94 @@
-import DaggersIcon from "../../images/daggers_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
-import "./CostumePageStyle.css"
+import "../CostumePageStyle.css"
+import ParkIcon from '@mui/icons-material/Park';
 
 
-export default function HobbitCostume() {
+export default function EntCostume() {
 
     return (
         <List>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                         style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une chemise rentré dans les pantalons de couleur 99±1% GΩ.
+                        Une branche d'arbre dans une main.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des pantalons ¾. La longueur entre le pantalon et le soulier doit être, en cm, de
-                        3u(t)+3/2r(t+1) à t=4.
+                        Des feuilles d'arbre collées sur un chapeau sur la tête.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une veste pour pas avoir froid en traversant le Mordor.
+                        De l'écorce collé sur la face.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des sandales avec du poil sur les pieds de 5cm.
+                        Un chandail brun, vert et/ou camo.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une pipe pour fumer comme ton grand-père.
+                        Un pantalon de couleur 110±1% Ω.
                     </div>
                 </ListItemText>
             </ListItem>
             <ListItem>
                 <ListItemIcon>
-                    <img src={DaggersIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
                     />
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et une quote
-                        d'Innoncent en HEX :
-                        <em> Je n'en dirai pas plus, il faut quand même que ceux qui ont A+ méritent leur note!</em>
+                        Le nom de votre asso étudiante écrit sur le chandail en hexadécimal.
+                    </div>
+                </ListItemText>
+            </ListItem>
+            <ListItem>
+                <ListItemIcon>
+                    <ParkIcon
+                        style={{width: '40px', height: '40px', color: 'white'}}
+                    />
+                </ListItemIcon>
+                <ListItemText>
+                    <div className="CostumeDialog">
+                        Des brindilles collées sur votre chandail. Il doit y en avoir un nombre de 3u(t) + 3/2r(t+1) à t=3.
                     </div>
                 </ListItemText>
             </ListItem>

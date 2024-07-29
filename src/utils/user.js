@@ -22,3 +22,22 @@ export async function isAdmin(){
     }
     return admin;
 }
+
+// Returns a boolean that tells if the user has completed the quizz.
+export async function isQuizzCompleted() {
+    const user = auth.currentUser;
+    let quizzCompleted = false;
+    if (!user) {
+        throw new Error("User is not authenticated");
+    }
+    const userDoc = doc(db, "Users", user.uid);
+    const docSnap = await getDoc(userDoc);
+
+    if (docSnap.exists()) {
+        const data = docSnap.data();
+        quizzCompleted = data.quizzCompleted;
+    } else {
+        throw new Error("No such document!");
+    }
+    return quizzCompleted;
+}
