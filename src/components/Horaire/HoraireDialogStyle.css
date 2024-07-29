@@ -59,6 +59,15 @@
     }
 }
 
-.test {
-    color: #76aab1
+.OkButton {
+    background-color: white;
+    color: rgba(85,136,38,0.85);
+    font-size: 18px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.OkButton:hover {
+    box-shadow: 0 0 0 0 #ffffff;
+    background-color: rgba(85,136,38,0.05);
 }
