@@ -2,6 +2,19 @@ import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogT
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from "react";
 import "./HoraireDialogStyle.css"
+import {styled} from "@mui/material/styles";
+
+const OkButton = styled(Button)({
+    backgroundColor: "white",
+    color: "rgba(85,136,38,0.85)",
+    fontSize: 16,
+    boxShadow: "none",
+    transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+    "&:hover": {
+        boxShadow: "0 0 0 0 #ffffff",
+        backgroundColor: "rgba(85,136,38,0.05)",
+    },
+});
 
 export default function HoraireDialog({ title, date, text, icon }) {
     //TODO: Boutons 'Je participe' et 'Quoi apporter'
@@ -55,11 +68,9 @@ export default function HoraireDialog({ title, date, text, icon }) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color={"primary"} variant="contained"
-                            className="OkButton"
-                    >
+                    <OkButton onClick={handleClose} color="primary" variant="contained">
                         J'ai compris!
-                    </Button>
+                    </OkButton>
                 </DialogActions>
             </Dialog>
         </div>
