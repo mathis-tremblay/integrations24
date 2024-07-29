@@ -5,16 +5,15 @@ import HobbitCostume from "./CostumeTypes/HobbitCostume";
 import NainCostume from "./CostumeTypes/NainCostume";
 import ElfCostume from "./CostumeTypes/ElfCostume";
 import EntCostume from "./CostumeTypes/EntCostume";
-import {isAdmin, isQuizzCompleted} from "../../utils/user";
+import {isAdmin, setQuizzCompleted} from "../../utils/user";
 import CostumeAdminPage from "./CostumeAdminPage";
 import QuizzPage from "./QuizzPage";
 
 
 export default function CostumePage () {
-    //TODO: Quizz
     const [costume, setCostume] = useState("");
     const [admin, setAdmin] = useState(false);
-    const [quizzCompleted, setQuizzCompleted] = useState(false)
+    const [quizzEnd, setQuizzEnd] = useState(false)
 
     useEffect(() => {
         const fetchAdmin = async () => {
@@ -34,8 +33,7 @@ export default function CostumePage () {
 
     useEffect( () => {
         async function fetchQuizzCompleted() {
-            const quizzCompleted = await isQuizzCompleted();
-            setQuizzCompleted(quizzCompleted);
+            await setQuizzCompleted(quizzEnd);
         }
         fetchQuizzCompleted().then();
     })
@@ -44,8 +42,8 @@ export default function CostumePage () {
         <div>
             {admin ?
                 <CostumeAdminPage/> :
-                quizzCompleted ?
-                    <QuizzPage/> :
+                !quizzEnd ?
+                    <QuizzPage setQuizzEnd={setQuizzEnd}/> :
                 <div className="CenterContainer">
                     <div className="CostumeHeader">
                         Vous êtes un <b>{costume.toUpperCase()}</b>

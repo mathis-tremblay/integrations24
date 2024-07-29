@@ -1,5 +1,5 @@
 import {auth, db} from "../components/firebase/firebase";
-import {doc, getDoc} from "firebase/firestore";
+import {doc, getDoc, updateDoc} from "firebase/firestore";
 
 
 // Returns a bool that tells if the user is an admin
@@ -40,4 +40,12 @@ export async function isQuizzCompleted() {
         throw new Error("No such document!");
     }
     return quizzCompleted;
+}
+
+export async function setQuizzCompleted(quizzCompleted) {
+    const user = auth.currentUser;
+
+    const userDoc = doc(db, "Users", user.uid);
+
+    await updateDoc(userDoc, { quizzCompleted: quizzCompleted });
 }

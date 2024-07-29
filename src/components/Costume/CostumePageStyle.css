@@ -6,6 +6,7 @@
     border-radius: 20px;
     flex-direction: column;
     padding: 20px;
+    position: relative;
 }
 
 .CostumeHeader {
@@ -36,18 +37,97 @@
 
 .CostumeDialog::-webkit-scrollbar-thumb:hover {
     background: #c5c5c5; /* Background color of the scrollbar on hover */
-    transition: background 0.3s;
+    transition: background 0.15s;
+}
+
+.NbQuestionRep {
+    font-size: 14px;
+    margin-top: 1%;
 }
 
 @media (max-width: 1200px) {
     .CostumeContainer {
-        margin: 1% 1% 0 1%;
+        margin: 2% 5% 0 5%;
         padding: 5px
     }
     .CostumeHeader {
         font-size: 18px;
     }
     .CostumeDialog {
+        font-size: 14px;
+    }
+    .NbQuestionRep {
         font-size: 12px;
+    }
+    .ChangeQuestionButton {
+        font-size: 16px;
+    }
+    .QuizzHeader {
+        font-size: 22px;
+    }
+    .QuizzDialog{
+        font-size: 18px;
+    }
 }
+
+.QuizzHeader {
+    font-size: 26px;
+    color: white;
+    text-align: center;
+}
+
+.QuizzDialog{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+
+.ChangeQuestionButton {
+    /*position: absolute;*/
+    margin-top: 3%;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: rgba(121, 174, 34, 0.8);
+    border-color: #ffff;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.ChangeQuestionButton:hover {
+    background-color: rgba(129, 184, 34, 0.8);
+}
+.ChangeQuestionButton:active {
+    background: rgba(131, 186, 35, 0.8);
+}
+.ChangeQuestionButton:disabled {
+    background-color: rgba(144, 149, 137, 0.6);
+    cursor: default;
+}
+
+.ChoicesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.ChoiceButton {
+    padding: 10px 20px;
+    margin: 4%;
+    font-size: 18px;
+    background: rgba(182, 197, 167, 0.4);
+    border-color: #ffff;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.ChoiceButton:hover {
+    background-color: rgba(182, 197, 167, 0.5);
+}
+.ChoiceButton:active {
+    background: rgba(213, 220, 207, 0.8);
+}
+.ChoiceButton.Active {
+    background: rgba(213, 220, 207, 0.8);
 }
