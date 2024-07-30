@@ -22,5 +22,7 @@ export const appConsts = {
 
     infos: {
         amountToPay: "69",
-    }
+    },
+
+    costumes: ["nain", "elf", "hobbit", "ent"]
 }

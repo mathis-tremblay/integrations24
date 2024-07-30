@@ -18,7 +18,7 @@ function LoginPage() {
             await signInWithEmailAndPassword(auth, email, password);
             localStorage.setItem("loggedIn", "true");
             console.log("User logged in Successfully");
-            navigate(appConsts.routerPaths.home.base)
+            navigate(appConsts.routerPaths.home.info)
             toast.success("Connection réussie!", {
                 position: "top-center",
                 autoClose: 1000 // display for 1s

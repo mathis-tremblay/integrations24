@@ -15,7 +15,6 @@ export default function InfoPage () {
             height: '100%',
             width: '100%',
             boxSizing: 'border-box',
-
         }}>
             <div className={"Header"}>
                 MERCI DE LIRE ATTENTIVEMENT LES INFORMATIONS CI-DESSOUS AVANT LES INTÉGRATIONS

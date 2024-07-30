@@ -1,0 +1,167 @@
+.CenterContainer {
+    background-color: rgba(85, 136, 38, 0.70);
+    margin: 5% 10% 0 10%;
+    display: flex;
+    height: 80vh;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.CostumeHeader {
+    font-size: 26px;
+    color: white;
+    text-align: center;
+}
+
+.CostumeDialog {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+.CostumeDialog::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.CostumeDialog::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.3); /* Background color of the track */
+    border-radius: 20px; /* To make it rounded */
+}
+
+.CostumeDialog::-webkit-scrollbar-thumb {
+    background: #e4e4e4; /* Background color of the scrollbar itself */
+    border-radius: 20px; /* To make it rounded */
+    transition: background 0.3s;
+}
+
+.CostumeDialog::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5; /* Background color of the scrollbar on hover */
+    transition: background 0.15s;
+}
+
+.NbQuestionRep {
+    font-size: 14px;
+    margin-top: 1%;
+}
+
+
+.QuizzHeader {
+    font-size: 26px;
+    color: white;
+    text-align: center;
+}
+
+.QuizzDialog{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+
+.ChangeQuestionButton {
+    /*position: absolute;*/
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: rgba(121, 174, 34, 0.8);
+    border-color: #ffff;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.ChangeQuestionButton:hover {
+    background-color: rgba(129, 184, 34, 0.8);
+}
+.ChangeQuestionButton:active {
+    background: rgba(131, 186, 35, 0.8);
+}
+.ChangeQuestionButton:disabled {
+    background-color: rgba(144, 149, 137, 0.6);
+    cursor: default;
+}
+
+.ChoicesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.ChoiceButton {
+    padding: 10px 20px;
+    margin: 4%;
+    font-size: 18px;
+    background: rgba(182, 197, 167, 0.4);
+    border-color: #ffff;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.ChoiceButton:hover {
+    background-color: rgba(182, 197, 167, 0.5);
+}
+.ChoiceButton:active {
+    background: rgba(213, 220, 207, 0.8);
+}
+.ChoiceButton.Active {
+    background: rgba(213, 220, 207, 0.8);
+}
+
+@media (max-width: 700px) {
+    .CostumeContainer {
+        margin: 2% 5% 0 5%;
+        padding: 5px
+    }
+    .CostumeHeader {
+        font-size: 22px;
+    }
+    .CostumeDialog {
+        font-size: 16px;
+    }
+    .NbQuestionRep {
+        font-size: 12px;
+    }
+    .ChoiceButton {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    .ChangeQuestionButton {
+        font-size: 16px;
+    }
+    .QuizzHeader {
+        font-size: 22px;
+    }
+    .QuizzDialog{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .CostumeContainer {
+        margin: 2% 5% 0 5%;
+        padding: 2px
+    }
+    .CostumeHeader {
+        font-size: 18px;
+    }
+    .CostumeDialog {
+        font-size: 12px;
+    }
+    .NbQuestionRep {
+        font-size: 11px;
+    }
+    .ChoiceButton {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+    .ChangeQuestionButton {
+        font-size: 15px;
+    }
+    .QuizzHeader {
+        font-size: 18px;
+    }
+    .QuizzDialog{
+        font-size: 12px;
+    }
+}
