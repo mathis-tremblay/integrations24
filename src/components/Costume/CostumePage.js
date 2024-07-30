@@ -5,7 +5,7 @@ import HobbitCostume from "./CostumeTypes/HobbitCostume";
 import NainCostume from "./CostumeTypes/NainCostume";
 import ElfCostume from "./CostumeTypes/ElfCostume";
 import EntCostume from "./CostumeTypes/EntCostume";
-import {isAdmin, setQuizzCompleted} from "../../utils/user";
+import {isAdmin, isQuizzCompleted} from "../../utils/user";
 import CostumeAdminPage from "./CostumeAdminPage";
 import QuizzPage from "./QuizzPage";
 
@@ -31,11 +31,12 @@ export default function CostumePage () {
         fetchCostume().then();
     }, []);
 
-    useEffect( () => {
-        async function fetchQuizzCompleted() {
-            await setQuizzCompleted(quizzEnd);
+    useEffect(() => {
+        async function fetchQuizzEnd() {
+            const quizzCompleted = await isQuizzCompleted();
+            setQuizzEnd(quizzCompleted);
         }
-        fetchQuizzCompleted().then();
+        fetchQuizzEnd().then();
     })
 
     return (

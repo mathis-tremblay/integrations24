@@ -1,5 +1,6 @@
 import {useState} from "react";
 import "./CostumePageStyle.css"
+import {setQuizzCompleted} from "../../utils/user";
 
 
 const questions = [
@@ -35,6 +36,7 @@ export default function QuizzPage({setQuizzEnd}) {
             setSelectedAnswer(null)
         } else {
             setQuizzEnd(true)
+            setQuizzCompleted(true).then()
         }
     }
 
