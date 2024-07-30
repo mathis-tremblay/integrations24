@@ -48,7 +48,7 @@ export default function CostumePage () {
                     <div className="CostumeHeader">
                         Vous êtes un <b>{costume.toUpperCase()}</b>
                     </div>
-                    <div className="CostumeDialog" style={{"marginTop": 3}}>
+                    <div className="CostumeHeader" style={{"marginTop": 3, "textAlign": "left"}}>
                         Il est indespensable pour tout {costume} d'avoir...
                     </div>
                     <div className="CostumeDialog">

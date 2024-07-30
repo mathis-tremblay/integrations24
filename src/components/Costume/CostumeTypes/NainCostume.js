@@ -8,7 +8,7 @@ export default function NainCostume() {
 
     return (
         <List>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -21,7 +21,7 @@ export default function NainCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -34,7 +34,7 @@ export default function NainCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -47,7 +47,7 @@ export default function NainCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -60,7 +60,7 @@ export default function NainCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -73,7 +73,7 @@ export default function NainCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={HelmetIcon}
                          alt={""}
@@ -85,19 +85,20 @@ export default function NainCostume() {
                         Une paire de short trop courte.
                     </div>
                 </ListItemText>
-            </ListItem><ListItem>
-            <ListItemIcon>
-                <img src={HelmetIcon}
-                     alt={""}
-                     style={{width: '40px', height: '40px'}}
-                />
-            </ListItemIcon>
-            <ListItemText>
-                <div className="CostumeDialog">
-                    Des grosses bottes.
-                </div>
-            </ListItemText>
-        </ListItem>
+            </ListItem>
+            <ListItem disableGutters>
+                <ListItemIcon>
+                    <img src={HelmetIcon}
+                         alt={""}
+                         style={{width: '40px', height: '40px'}}
+                    />
+                </ListItemIcon>
+                <ListItemText>
+                    <div className="CostumeDialog">
+                        Des grosses bottes.
+                    </div>
+                </ListItemText>
+            </ListItem>
         </List>
     )
 }

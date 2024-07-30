@@ -8,7 +8,7 @@ export default function EntCostume() {
 
     return (
         <List>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                          style={{width: '40px', height: '40px', color: 'white'}}
@@ -20,7 +20,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}
@@ -32,7 +32,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}
@@ -44,7 +44,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}
@@ -56,7 +56,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}
@@ -68,7 +68,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}
@@ -80,7 +80,7 @@ export default function EntCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <ParkIcon
                         style={{width: '40px', height: '40px', color: 'white'}}

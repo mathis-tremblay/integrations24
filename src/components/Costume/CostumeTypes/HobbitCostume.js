@@ -8,7 +8,7 @@ export default function HobbitCostume() {
 
     return (
         <List>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -21,7 +21,7 @@ export default function HobbitCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -35,7 +35,7 @@ export default function HobbitCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -48,7 +48,7 @@ export default function HobbitCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -61,7 +61,7 @@ export default function HobbitCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -74,7 +74,7 @@ export default function HobbitCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={DaggersIcon}
                          alt={""}
@@ -84,7 +84,7 @@ export default function HobbitCostume() {
                 <ListItemText>
                     <div className="CostumeDialog">
                         Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et une quote
-                        d'Innoncent en HEX :
+                        d'Innoncent en HEX:
                         <em> Je n'en dirai pas plus, il faut quand même que ceux qui ont A+ méritent leur note!</em>
                     </div>
                 </ListItemText>

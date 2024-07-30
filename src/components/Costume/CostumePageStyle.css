@@ -45,30 +45,6 @@
     margin-top: 1%;
 }
 
-@media (max-width: 1200px) {
-    .CostumeContainer {
-        margin: 2% 5% 0 5%;
-        padding: 5px
-    }
-    .CostumeHeader {
-        font-size: 18px;
-    }
-    .CostumeDialog {
-        font-size: 14px;
-    }
-    .NbQuestionRep {
-        font-size: 12px;
-    }
-    .ChangeQuestionButton {
-        font-size: 16px;
-    }
-    .QuizzHeader {
-        font-size: 22px;
-    }
-    .QuizzDialog{
-        font-size: 18px;
-    }
-}
 
 .QuizzHeader {
     font-size: 26px;
@@ -84,7 +60,7 @@
 
 .ChangeQuestionButton {
     /*position: absolute;*/
-    margin-top: 3%;
+    margin-top: 40px;
     padding: 10px 20px;
     font-size: 20px;
     background: rgba(121, 174, 34, 0.8);
@@ -130,4 +106,62 @@
 }
 .ChoiceButton.Active {
     background: rgba(213, 220, 207, 0.8);
+}
+
+@media (max-width: 700px) {
+    .CostumeContainer {
+        margin: 2% 5% 0 5%;
+        padding: 5px
+    }
+    .CostumeHeader {
+        font-size: 22px;
+    }
+    .CostumeDialog {
+        font-size: 16px;
+    }
+    .NbQuestionRep {
+        font-size: 12px;
+    }
+    .ChoiceButton {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    .ChangeQuestionButton {
+        font-size: 16px;
+    }
+    .QuizzHeader {
+        font-size: 22px;
+    }
+    .QuizzDialog{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .CostumeContainer {
+        margin: 2% 5% 0 5%;
+        padding: 2px
+    }
+    .CostumeHeader {
+        font-size: 18px;
+    }
+    .CostumeDialog {
+        font-size: 12px;
+    }
+    .NbQuestionRep {
+        font-size: 11px;
+    }
+    .ChoiceButton {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+    .ChangeQuestionButton {
+        font-size: 15px;
+    }
+    .QuizzHeader {
+        font-size: 18px;
+    }
+    .QuizzDialog{
+        font-size: 12px;
+    }
 }

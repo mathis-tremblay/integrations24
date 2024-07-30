@@ -2,7 +2,6 @@ import {useState} from "react";
 import "./CostumePageStyle.css"
 
 
-
 const questions = [
     {
         question: "Qui possède l'anneau de pouvoir au début de la trilogie des Seigneurs des anneaux ?",
@@ -56,7 +55,7 @@ export default function QuizzPage({setQuizzEnd}) {
                 Bonjour chère GelGifois.
             </div>
 
-            <div className="QuizzDialog" style={{"marginTop": 3}}>
+            <div className="QuizzDialog" style={{"marginTop": 5}}>
                 Avant de te joindre aux rangs de notre armée, réponds à 5 questions
                 qui vont nous aider à connaitre ton futur rôle dans la bataille...
             </div>

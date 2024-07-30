@@ -8,7 +8,7 @@ export default function ElfCostume() {
 
     return (
         <List>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
                          alt={""}
@@ -21,7 +21,7 @@ export default function ElfCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
                          alt={""}
@@ -34,7 +34,7 @@ export default function ElfCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
                          alt={""}
@@ -47,7 +47,7 @@ export default function ElfCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
                          alt={""}
@@ -60,7 +60,7 @@ export default function ElfCostume() {
                     </div>
                 </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
                          alt={""}
@@ -72,19 +72,20 @@ export default function ElfCostume() {
                         Une cape de couleur 5.5±0.5% MΩ avec <em>GELGIF</em> écrit en hexadécimal dessus.
                     </div>
                 </ListItemText>
-            </ListItem><ListItem>
-            <ListItemIcon>
-                <img src={BowIcon}
-                     alt={""}
-                     style={{width: '40px', height: '40px'}}
-                />
-            </ListItemIcon>
-            <ListItemText>
-                <div className="CostumeDialog">
-                    Une pièce de vêtement en cuir brun ou noir.
-                </div>
-            </ListItemText>
-        </ListItem>
+            </ListItem>
+            <ListItem disableGutters>
+                <ListItemIcon>
+                    <img src={BowIcon}
+                         alt={""}
+                         style={{width: '40px', height: '40px'}}
+                    />
+                </ListItemIcon>
+                <ListItemText>
+                    <div className="CostumeDialog">
+                        Une pièce de vêtement en cuir brun ou noir.
+                    </div>
+                </ListItemText>
+            </ListItem>
         </List>
     )
 }
