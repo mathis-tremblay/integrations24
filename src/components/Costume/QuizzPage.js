@@ -40,13 +40,6 @@ export default function QuizzPage({setQuizzEnd}) {
         }
     }
 
-    /*const handlePreviousQuestion = () => {
-        if (questionAnswered > 0) {
-            setQuestionAnswered(questionAnswered - 1);
-            setSelectedAnswer(null)
-        }
-    }*/
-
     const handleAnswerClick = (index) => {
         setSelectedAnswer(index);
     };

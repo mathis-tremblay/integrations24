@@ -3,6 +3,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from "react";
 import "./HorairePageStyle.css"
 import {styled} from "@mui/material/styles";
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 const OkButton = styled(Button)({
     backgroundColor: "white",
@@ -15,8 +17,19 @@ const OkButton = styled(Button)({
         backgroundColor: "rgba(85,136,38,0.05)",
     },
 });
+const ParticipatingButton = styled(Button)({
+    backgroundColor: "white",
+    color: "rgba(85,136,38,0.85)",
+    fontSize: 16,
+    boxShadow: "none",
+    transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+    "&:hover": {
+        boxShadow: "0 0 0 0 #ffffff",
+        backgroundColor: "rgba(85,136,38,0.05)",
+    },
+});
 
-export default function HoraireDialog({ title, date, text, icon }) {
+export default function HoraireDialog({ title, date, text, icon, participating, handleParticipatingChange, day }) {
     //TODO: Boutons 'Je participe' et 'Quoi apporter'
     const [openDialog, setOpenDialog] = React.useState(false);
 
@@ -26,6 +39,10 @@ export default function HoraireDialog({ title, date, text, icon }) {
 
     const handleClose = () => {
         setOpenDialog(false);
+    }
+
+    const handleParticipatingClick = async () => {
+        await handleParticipatingChange(!participating, day);
     }
 
     return (
@@ -68,6 +85,13 @@ export default function HoraireDialog({ title, date, text, icon }) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
+                    <ParticipatingButton onClick={handleParticipatingClick}>
+                        {participating ?
+                            <StarIcon style={{marginRight: "4px", marginBottom: "4px"}}/> :
+                            <StarBorderIcon style={{marginRight: "4px", marginBottom: "4px"}}/>
+                        }
+                        Je participe
+                    </ParticipatingButton>
                     <OkButton onClick={handleClose} color="primary" variant="contained">
                         J'ai compris!
                     </OkButton>
