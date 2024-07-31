@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(12, 1fr);
-    gap: 0 15px;
+    gap: 0 3%;
     width: 100%;
     height: 100%;
 }
@@ -15,7 +15,7 @@
 .title {
     grid-area: 1 / 2 / 1 / 12;
     align-items: start;
-    align-self: end;
+    align-self: center;
     font-size: large;
     font-weight: 500;
     text-align: left;
@@ -24,7 +24,7 @@
 .desc {
     grid-area: 2 / 2 / 3 / 12;
     justify-self: start;
-    align-self: start;
+    align-self: center;
     font-weight: 300;
     text-align: left;
 }
@@ -36,52 +36,15 @@
 .Header {
     text-align: center;
     padding: 5px;
-    margin: 10px 130px 10px 130px;
-    background-color: rgba(85,136,38,0.90);
+    margin: 4vh 10% 2vh 10%;
+    background-color: rgba(165, 86, 45, 0.9);
     border: solid 1px #454849;
     border-radius: 10px;
     font-weight: 500;
     font-size: 18px;
     color: white;
+    font-style: italic;
 }
-
-@media (max-width: 1200px) {
-    .Header {
-        font-size: 16px; /* for medium screens */
-        margin: 0 70px 10px 70px;
-    }
-    .title {
-        font-size: 16px;
-    }
-    .desc {
-        font-size: 13px;
-    }
-}
-@media (max-width: 1000px) {
-    .Header {
-        font-size: 13px; /* for small screens */
-        margin: 0 20px 10px 30px;
-    }
-    .title {
-        font-size: 13px;
-    }
-    .desc {
-        font-size: 11px;
-    }
-}
-@media (max-width: 800px) {
-    .Header {
-        font-size: 12px;
-        margin: 0 20px 10px 30px;
-    }
-    .title {
-        font-size: 12px;
-    }
-    .desc {
-        font-size: 10px;
-    }
-}
-
 
 .OkButton {
     background-color: white;
@@ -94,4 +57,27 @@
 .OkButton:hover {
     box-shadow: 0 0 0 0 #ffffff;
     background-color: rgba(85,136,38,0.05);
+}
+
+@media(max-width: 700px) {
+    .Header {
+        font-size: 16px; /* for medium screens */
+    }
+    .title {
+        font-size: 16px;
+    }
+    .desc {
+        font-size: 13px;
+    }
+}
+@media (max-width: 400px) {
+    .Header {
+        font-size: 13px; /* for small screens */
+    }
+    .title {
+        font-size: 13px;
+    }
+    .desc {
+        font-size: 11px;
+    }
 }
