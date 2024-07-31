@@ -70,7 +70,7 @@
         font-size: 13px;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 400px) {
     .Header {
         font-size: 13px; /* for small screens */
     }

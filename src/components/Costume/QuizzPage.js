@@ -74,21 +74,16 @@ export default function QuizzPage({setQuizzEnd}) {
                         </button>
                     ))}
                 </div>
-
-                {/*
-                <button onClick={handlePreviousQuestion} className="ChangeQuestionButton"
-                        style={{bottom: "5%", left: "3%"}}>
-                    Question précédente
-                </button>*/}
-                <button onClick={handleNextQuestion} className="ChangeQuestionButton" disabled={selectedAnswer === null}
-                    //style={{bottom: "5%", right: "3%"}}
-                >
-                    {questionAnswered === questions.length - 1 ?
-                        "Fin du quizz" :
-                        "Question suivante"
-                    }
-                </button>
-                <p className="NbQuestionRep">{`${questionAnswered} question répondue sur 5`}</p>
+                <div style={{position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", width: "70%"}}>
+                    <button onClick={handleNextQuestion} className="ChangeQuestionButton" disabled={selectedAnswer === null}
+                    >
+                        {questionAnswered === questions.length - 1 ?
+                            "Fin du quizz" :
+                            "Question suivante"
+                        }
+                    </button>
+                    <p className="NbQuestionRep">{`${questionAnswered} question répondue sur 5`}</p>
+                </div>
 
             </div>
         </div>

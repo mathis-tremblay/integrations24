@@ -59,7 +59,7 @@
         font-size: 14px;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 400px) {
     .grid {
         padding: 0;
     }
@@ -70,6 +70,6 @@
         font-size: 13px;
     }
     .grid {
-        padding: 0px;
+        padding: 0;
     }
 }
