@@ -34,13 +34,13 @@ export default function InfoPage () {
             <InfoDialog
                 title={"Informations importantes"}
                 desc={"Crois moi, ça vaut la peine de lire."}
-                text={texts.infoImportantes}       // TODO: Change text
+                text={texts.infoImportantes}
                 icon={<ReportProblemIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
                 title={"Frais"}
                 desc={"Pour qu'on s'achète une vie."}
-                text={texts.initRead}       // TODO: Change text
+                text={texts.frais}
                 icon={<LocalAtmIcon sx={{fontSize: "2.5rem"}}/>}
             />
         </div>

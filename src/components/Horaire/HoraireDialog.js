@@ -30,7 +30,6 @@ const ParticipatingButton = styled(Button)({
 });
 
 export default function HoraireDialog({ title, date, text, icon, participating, handleParticipatingChange, day }) {
-    //TODO: Boutons 'Je participe' et 'Quoi apporter'
     const [openDialog, setOpenDialog] = React.useState(false);
 
     const handleClick = () => {

@@ -9,11 +9,11 @@ import { isParticipating, setParticipating } from "../../utils/user";
 import "./HorairePageStyle.css";
 
 const days = [
-    { id: 1, title: "Activités et Ptite Gre", date: "02/09/2024", icon: HelmetIcon },
-    { id: 2, title: "Rally appart", date: "03/09/2024", icon: DaggersIcon },
-    { id: 3, title: "Ptite soirée relax", date: "04/09/2024", icon: BookIcon },
-    { id: 4, title: "Festin", date: "05/09/2024", icon: ChestIcon },
-    { id: 5, title: "GROS PARTY !!!", date: "06/09/2024", icon: PotionIcon },
+    { id: 1, title: "Activités et Ptite Gre", text: "", date: "02/09/2024", icon: HelmetIcon },
+    { id: 2, title: "Rally appart", text: "", date: "03/09/2024", icon: DaggersIcon },
+    { id: 3, title: "Ptite soirée relax", text: "", date: "04/09/2024", icon: BookIcon },
+    { id: 4, title: "Festin", text: "", date: "05/09/2024", icon: ChestIcon },
+    { id: 5, title: "GROS PARTY !!!", text: "", date: "06/09/2024", icon: PotionIcon },
 ];
 
 export default function HorairePage() {
@@ -46,7 +46,7 @@ export default function HorairePage() {
                     title={day.title}
                     date={day.date}
                     icon={<img src={day.icon} alt="" style={{ width: '60px', height: '60px' }} />}
-                    text="Test"
+                    text={day.text}
                     participating={participation[index]}
                     handleParticipatingChange={handleParticipatingChange}
                     day={day.id}
