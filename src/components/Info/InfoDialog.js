@@ -38,7 +38,8 @@ export default function InfoDialog({ title, desc, text, icon }) {
                         backgroundColor: 'rgba(85,136,38,0.85)',
                         color: 'white',
                         textTransform: 'none',
-                        margin: 30
+                        margin: "4vh",
+                        minWidth: "275px",
                     }}
             >
                 <div className="grid">
@@ -52,13 +53,6 @@ export default function InfoDialog({ title, desc, text, icon }) {
                 open={openDialog}
                 onClose={handleClose}
                 maxWidth="lg"
-                fullWidth
-                style={{
-                    '& .MuiDialog-paper': {
-                        width: '70%',
-                        maxHeight: '80vh',
-                    }
-                }}
             >
                 <DialogTitle>{title}</DialogTitle>
                 <DialogContent>

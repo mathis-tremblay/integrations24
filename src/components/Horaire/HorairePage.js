@@ -4,20 +4,13 @@ import PotionIcon from "../../images/potion_icon.png"
 import HelmetIcon from "../../images/helmet_icon.png"
 import BookIcon from "../../images/book_icon.png"
 import DaggersIcon from "../../images/daggers_icon.png"
+import "./HorairePageStyle.css"
 
 
 export default function HorairePage () {
 
     return (
-        <div style={{
-            display: 'inline',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-            width: '100%',
-            boxSizing: 'border-box',
-
-        }}>
+        <div style={{"marginTop": "3vh"}}>
             <HoraireDialog
                 title={"Activités et Ptite Gre"}
                 date={"02/09/2024"}

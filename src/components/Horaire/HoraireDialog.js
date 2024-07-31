@@ -1,7 +1,7 @@
 import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import * as React from "react";
-import "./HoraireDialogStyle.css"
+import "./HorairePageStyle.css"
 import {styled} from "@mui/material/styles";
 
 const OkButton = styled(Button)({
@@ -39,7 +39,7 @@ export default function HoraireDialog({ title, date, text, icon }) {
                         backgroundColor: 'rgba(85,136,38,0.85)',
                         color: 'white',
                         textTransform: 'none',
-                        margin: 30
+                        margin: "3vh"
                     }}
             >
                 <div className="grid">
