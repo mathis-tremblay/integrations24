@@ -70,10 +70,10 @@ export const texts = {
 
     //TODO:
     day: {
-        1: "Bla",
-        2: "BlaBla",
-        3: "BlaBlaBla",
-        4: "BlaBlaBlaBla",
-        5: "BlaBlaBlaBlaBla",
+        one: "Bla",
+        two: "BlaBla",
+        three: "BlaBlaBla",
+        four: "BlaBlaBlaBla",
+        five: "BlaBlaBlaBlaBla",
     }
 }
