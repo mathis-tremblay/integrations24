@@ -5,7 +5,13 @@ import App from './App';
 import {createTheme, ThemeProvider} from "@mui/material";
 import LoadingSpinner from "./components/LoadingSpinner";
 
-const theme = createTheme();
+const theme = createTheme({
+    palette: {
+        primary:{
+            main: "#FFFFFF",
+        }
+    },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
