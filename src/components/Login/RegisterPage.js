@@ -37,6 +37,8 @@ function RegisterPage() {
                     admin: false,
                     costume: leastUsedCostume,
                     quizzCompleted: false,
+                    participatingDays: [],
+                    messages: []
                 });
             }
             console.log("Inscription réussie!!");

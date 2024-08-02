@@ -1,16 +1,17 @@
-import {InputBase, Paper, TextField} from "@mui/material";
+import {InputBase, Paper} from "@mui/material";
 import LoadingSpinner from "../LoadingSpinner";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./MessagesPageStyle.css"
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import SendIcon from '@mui/icons-material/Send';
-import {WriteMessage} from "../../utils/messages";
+import {ReadMessages, WriteMessage} from "../../utils/messages";
+import MessageObject from "./MessageObject";
 
 
 export default function MessagesPage () {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [inputText, setInputText] = useState("");
+    const [messages, setMessages] = useState([])
 
     /* BRAINSTORM
     * - Envoyer messages vers firebase.
@@ -28,32 +29,52 @@ export default function MessagesPage () {
     * - Ecrire reponses directement dans firebase (derniere option)
     * */
 
+    useEffect(() => {
+        async function getMessages() {
+            const messages = await ReadMessages();
+            setMessages(messages);
+            setLoading(false);
+        }
+        getMessages().then();
+    },[])
+
     const handleChange = (event) => {
         setInputText(event.target.value);
     };
 
-
     const handleSendMessage = async () => {
         if (inputText !== "") await WriteMessage(inputText);
-
+        setInputText("");
     }
 
     return (
         <div>
             <LoadingSpinner loading={loading}/>
             <div className="messagesContainer">
+                <p className="header">
+                    Des questions? Écrivez un message à votre comité organisateur!
+                </p>
+                    <div className="messages">
+                        {
+                        messages.map((message) => (
+                            <div key={message.id}>
+                                <MessageObject message={message}/>
+                            </div>
+                        ))
+                        }
+                    </div>
+
                 <Paper
                     component="form"
                     style={{
-                        position: "absolute",
-                        alignItems: "center",
-                        bottom: "5%",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "95%",
+                        justifyContent: "flex-end",
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "100%",
                         backgroundColor: "rgba(165, 86, 45, 0.7)",
                         color: "white",
-                        border: "solid 2px #ffffff"
+                        border: "solid 2px #ffffff",
+                        position: "relative"
                     }}
                 >
                     <InputBase
@@ -64,14 +85,14 @@ export default function MessagesPage () {
                         sx={{
                             color: "white",
                             fontSize: "18px",
-                            width: "95%",
+                            width: "93%",
                             marginTop: "0.5%",
                             marginLeft: "1.5%",
                             marginRight: "5%",
                     }}
                     />
                     <IconButton color="primary"
-                                sx={{position: "absolute", right: "0", bottom: "1%"}}
+                                sx={{position: "absolute", right: 0}}
                                 onClick={handleSendMessage}
                     >
                         <SendIcon />

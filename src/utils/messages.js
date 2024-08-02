@@ -68,9 +68,10 @@ export async function ReadMessages() {
     })
     // List of messages object: [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, type: "message", id: xxxxxx}, {...}]
     const messages = await Promise.all(promises);
+    const messagesData = messages.map(doc => ({ id: doc.id, ...doc.data() }));
 
     // Returns an array of message sorted from the oldest date to the most recent. [old, ..., recent]
-    return messages.sort(
-        (a, b) => a.date.toDate().getTime() - b.date.toDate().getTime()
+    return messagesData.sort(
+        (a, b) => a.date?.toDate().getTime() - b.date?.toDate().getTime()
     )
 }
