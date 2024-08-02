@@ -5,26 +5,27 @@ import HobbitCostume from "./CostumeTypes/HobbitCostume";
 import NainCostume from "./CostumeTypes/NainCostume";
 import ElfCostume from "./CostumeTypes/ElfCostume";
 import EntCostume from "./CostumeTypes/EntCostume";
-import { isAdmin, isQuizzCompleted } from "../../utils/user";
+import { isQuizzCompleted } from "../../utils/user";
 import CostumeAdminPage from "./CostumeAdminPage";
 import QuizzPage from "./QuizzPage";
 import LoadingSpinner from "../LoadingSpinner";
+import {useMain} from "../../reactHooks/MainContext";
 
 export default function CostumePage() {
+    const main = useMain();
+
+    const admin = main.admin;
     const [costume, setCostume] = useState("");
-    const [admin, setAdmin] = useState(false);
     const [quizzEnd, setQuizzEnd] = useState(false);
     const [loading, setLoading] = useState(true); // New loading state
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const [adminResult, costumeResult, quizzCompleted] = await Promise.all([
-                    isAdmin(),
+                const [costumeResult, quizzCompleted] = await Promise.all([
                     getUserCostume(),
                     isQuizzCompleted(),
                 ]);
-                setAdmin(adminResult);
                 setCostume(costumeResult);
                 setQuizzEnd(quizzCompleted);
             } catch (error) {

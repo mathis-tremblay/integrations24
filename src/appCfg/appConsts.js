@@ -10,6 +10,7 @@ export const appConsts = {
             horaire: '/home/horaire',
             costume: '/home/costume',
             messages: '/home/messages',
+            messagesAdmin: '/home/messages-admin'
         }
     },
 

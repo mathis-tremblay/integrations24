@@ -89,9 +89,10 @@
 
 .ChangeQuestionButton {
     margin-top: 40px;
-    padding: 10px 20px;
-    font-size: 20px;
-    background: rgba(121, 174, 34, 0.8);
+    padding: 15px 5px;
+    width: 50vw;
+    font-size: 24px;
+    background: rgba(165, 86, 45, 0.7);
     border-color: #ffff;
     color: #ffff;
     border-radius: 5px;
@@ -99,10 +100,10 @@
     transition: all 0.15s;
 }
 .ChangeQuestionButton:hover {
-    background-color: rgba(129, 184, 34, 0.8);
+    background-color: rgba(150, 80, 40, 0.8);
 }
 .ChangeQuestionButton:active {
-    background: rgba(131, 186, 35, 0.8);
+    background: rgba(142, 72, 35, 0.8);
 }
 .ChangeQuestionButton:disabled {
     background-color: rgba(144, 149, 137, 0.6);
@@ -134,7 +135,7 @@
         font-size: 18px;
     }
     .ChangeQuestionButton {
-        font-size: 18px;
+        font-size: 20px;
     }
     .QuizzHeader {
         font-size: 24px;
@@ -159,11 +160,10 @@
         font-size: 11px;
     }
     .ChoiceButton {
-        padding: 8px 12px;
         font-size: 15px;
     }
     .ChangeQuestionButton {
-        font-size: 16px;
+        font-size: 17px;
     }
     .QuizzHeader {
         font-size: 20px;

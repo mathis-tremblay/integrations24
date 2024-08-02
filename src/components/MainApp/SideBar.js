@@ -8,7 +8,7 @@ import {styled} from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import {appConsts} from "../../appCfg/appConsts";
 import {ListItemButton, ListItemIcon, ListItemText, useMediaQuery} from "@mui/material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,6 +16,8 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import ChatIcon from '@mui/icons-material/Chat';
 import LogoutIcon from "@mui/icons-material/Logout";
+import {isAdmin} from "../../utils/user";
+import {useMain} from "../../reactHooks/MainContext";
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -50,9 +52,13 @@ const SideBar = () => {
     // Define the breakpoint below which the Toolbar will be hidden
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
-    const [tab, setTab] = useState("")
-    const navigate = useNavigate();
+    const main = useMain();
+
+    const admin = main.admin;
     const [open, setOpen] = useState(false);
+    const [tab, setTab] = useState("")
+
+    const navigate = useNavigate();
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -75,7 +81,10 @@ const SideBar = () => {
                 navigate(appConsts.routerPaths.home.costume);
                 return;
             case (appConsts.menus.messages):
-                navigate(appConsts.routerPaths.home.messages);
+                admin ?
+                    navigate(appConsts.routerPaths.home.messagesAdmin)
+                    :
+                    navigate(appConsts.routerPaths.home.messages);
                 return;
             default:
                 return;
