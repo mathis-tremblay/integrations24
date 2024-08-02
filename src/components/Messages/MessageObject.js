@@ -1,9 +1,14 @@
 import "./MessagesPageStyle.css"
 
 
-export default function MessageObject({message}) {
+export default function MessageObject({message, showDate}) {
     return (
-        <div className="message-wrapper">
+        <div>
+            {!showDate ? null :
+                <p className="date">
+                        {message.date.toDate().toLocaleDateString()}
+                </p>
+            }
             {message.answer ?
                 <p className="answer">
                     {message.text}

@@ -41,7 +41,8 @@ export async function WriteMessage(text) {
             answer: false,
             date: serverTimestamp(),
             id: id,
-            text: text
+            text: text,
+            user: user.uid
         })
 
     await updateDoc(userDoc, {messages: arrayUnion(id)})

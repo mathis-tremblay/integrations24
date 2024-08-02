@@ -1,6 +1,6 @@
 import {InputBase, Paper} from "@mui/material";
 import LoadingSpinner from "../LoadingSpinner";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import "./MessagesPageStyle.css"
 import IconButton from "@mui/material/IconButton";
 import SendIcon from '@mui/icons-material/Send';
@@ -12,22 +12,10 @@ export default function MessagesPage () {
     const [loading, setLoading] = useState(true);
     const [inputText, setInputText] = useState("");
     const [messages, setMessages] = useState([])
+    const [sentMessage, setSentMessage] = useState(false);
 
-    /* BRAINSTORM
-    * - Envoyer messages vers firebase.
-    * - Trier messages et réponses (par admin) en fonction de la date qui est en clé.
-    *   Donc on sait l'ordre d'affichage.
-    *   Extraire les données de firebase dans une liste d'objet:
-    *       [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, type: "message" ou "answer"}, {...}]
-    *
-    *
-    * - Faire une autre collection dans firebase pour les messages.
-    *   Mettre les message (ou leur id) dans la collection de chaque utilisateurs.
-    *   Il y aurait l'id de l'utilisateur avec chaque message en plus des autres infos (date, type...).
-    *   Donc, la page MessagesAdmin écrirerait directement dans les données des autre utilisateurs.
-    *
-    * - Ecrire reponses directement dans firebase (derniere option)
-    * */
+    // Create a reference to the last message
+    const messagesEndRef = useRef(null);
 
     useEffect(() => {
         async function getMessages() {
@@ -36,7 +24,12 @@ export default function MessagesPage () {
             setLoading(false);
         }
         getMessages().then();
-    },[])
+    },[sentMessage])
+
+    useEffect(() => {
+        // Scroll to the last message when a new message gets sent
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    },[messages])
 
     const handleChange = (event) => {
         setInputText(event.target.value);
@@ -45,6 +38,9 @@ export default function MessagesPage () {
     const handleSendMessage = async () => {
         if (inputText !== "") await WriteMessage(inputText);
         setInputText("");
+        setSentMessage(!sentMessage);
+        // Scroll to the last message when a new message is sent
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (
@@ -55,13 +51,23 @@ export default function MessagesPage () {
                     Des questions? Écrivez un message à votre comité organisateur!
                 </p>
                     <div className="messages">
-                        {
-                        messages.map((message) => (
-                            <div key={message.id}>
-                                <MessageObject message={message}/>
+                        <div className="contentWrapper">
+                            <div className="content">
+                                {
+                                    messages.map((message, index) => (
+                                        <div key={message.id}
+                                            // Add the ref to the last message in the list
+                                             ref={messages.length - 1 === index ? messagesEndRef : null}>
+                                            <MessageObject
+                                                message={message}
+                                                // Check if this is the first message or if the date has changed since the last message
+                                                showDate={index === 0 || message.date.toDate().toLocaleDateString() !== messages[index - 1].date.toDate().toLocaleDateString()}
+                                            />
+                                        </div>
+                                    ))
+                                }
                             </div>
-                        ))
-                        }
+                        </div>
                     </div>
 
                 <Paper
@@ -70,11 +76,13 @@ export default function MessagesPage () {
                         justifyContent: "flex-end",
                         display: "flex",
                         flexDirection: "column",
-                        width: "100%",
+                        width: "99%",
                         backgroundColor: "rgba(165, 86, 45, 0.7)",
                         color: "white",
                         border: "solid 2px #ffffff",
-                        position: "relative"
+                        position: "relative",
+                        marginTop: "1vh",
+                        maxHeight: "40%",
                     }}
                 >
                     <InputBase
@@ -82,14 +90,13 @@ export default function MessagesPage () {
                         multiline
                         value={inputText}
                         onChange={handleChange}
-                        sx={{
-                            color: "white",
-                            fontSize: "18px",
-                            width: "93%",
-                            marginTop: "0.5%",
-                            marginLeft: "1.5%",
-                            marginRight: "5%",
-                    }}
+                        onKeyDown={event => {
+                            if (event.key === 'Enter' && !event.shiftKey) {
+                                event.preventDefault();
+                                handleSendMessage().then();
+                            }}}
+                        className="textInput"
+                        style={{ color: "white", flex: 1}}
                     />
                     <IconButton color="primary"
                                 sx={{position: "absolute", right: 0}}
