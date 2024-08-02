@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {appConsts} from "../appCfg/appConsts";
 import {useMain} from "../reactHooks/MainContext";
 
@@ -12,7 +12,7 @@ export default function AdminRoute({ children }){
 
     // verify if the user is an admin
     useEffect(() => {
-        if (!admin) navigate(appConsts.routerPaths.login)
+        if (!admin) navigate(appConsts.routerPaths.home.info)
     }, [admin, navigate]);
 
     return admin ? children : null;

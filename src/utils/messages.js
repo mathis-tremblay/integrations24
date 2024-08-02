@@ -76,3 +76,8 @@ export async function ReadMessages() {
         (a, b) => a.date?.toDate().getTime() - b.date?.toDate().getTime()
     )
 }
+
+// Read a convo that an admin is having with a user.
+export async function ReadConvo(userId) {
+
+}

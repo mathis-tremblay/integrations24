@@ -22,25 +22,25 @@ export default function InfoPage () {
             <InfoDialog
                 title={"Nos bienvenues !"}
                 desc={"Usanda kuchitha isikhathi sakho."}
-                text={texts.bienvenue}
+                text={texts.info.bienvenue}
                 icon={<EmailIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
                 title={"Informations générales"}
                 desc={"Lis sinon on t'aime un peu moins."}
-                text={texts.infoGenerales}
+                text={texts.info.infoGenerales}
                 icon={<BlindIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
                 title={"Informations importantes"}
                 desc={"Crois moi, ça vaut la peine de lire."}
-                text={texts.infoImportantes}
+                text={texts.info.infoImportantes}
                 icon={<ReportProblemIcon sx={{fontSize: "2.5rem"}}/>}
             />
             <InfoDialog
                 title={"Frais"}
                 desc={"Pour qu'on s'achète une vie."}
-                text={texts.frais}
+                text={texts.info.frais}
                 icon={<LocalAtmIcon sx={{fontSize: "2.5rem"}}/>}
             />
         </div>
