@@ -16,7 +16,8 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import ChatIcon from '@mui/icons-material/Chat';
 import LogoutIcon from "@mui/icons-material/Logout";
-import {useMain} from "../../reactHooks/MainContext";
+import {useMain} from "../../reactHooks/MainContext"
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -84,6 +85,9 @@ const SideBar = () => {
                     navigate(appConsts.routerPaths.home.messagesAdmin)
                     :
                     navigate(appConsts.routerPaths.home.messages);
+                return;
+            case (appConsts.menus.analytics):
+                navigate(appConsts.routerPaths.home.analytics)
                 return;
             default:
                 return;
@@ -157,6 +161,18 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary={appConsts.menus.messages} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
                 </ListItemButton>
+
+                {!admin ? null :
+                    <ListItemButton
+                        onClick={(event) => handleTabChange(event, appConsts.menus.analytics)}
+                    >
+                        <ListItemIcon>
+                            <BarChartIcon sx={{"color": "white"}}/>
+                        </ListItemIcon>
+                        <ListItemText primary={appConsts.menus.analytics} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
+                    </ListItemButton>
+                }
+
                 <Divider  sx={{"backgroundColor": "white", "height": 3}}/>
                 <ListItemButton
                     onClick={handleLogout}

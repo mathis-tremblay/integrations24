@@ -22,6 +22,7 @@ import {ConfirmProvider} from "material-ui-confirm";
 import AdminRoute from "./router/AdminRoute";
 import {MainProvider} from "./reactHooks/MainContext";
 import MessagesAdminPage from "./components/Messages/MessagesAdminPage";
+import AnalyticsPage from "./components/Analytics/AnalyticsPage";
 
 function App() {
     const [user, setUser] = useState();
@@ -64,6 +65,8 @@ function App() {
                             <Route path={appConsts.routerPaths.home.messages} element={<MessagesPage/>}/>
                             <Route path={appConsts.routerPaths.home.messagesAdmin}
                                    element={ <AdminRoute> <MessagesAdminPage/> </AdminRoute> }/>
+                            <Route path={appConsts.routerPaths.home.analytics}
+                                   element={ <AdminRoute> <AnalyticsPage/> </AdminRoute> }/>
                         </Route>
                     </Routes>
                     <ToastContainer/>
