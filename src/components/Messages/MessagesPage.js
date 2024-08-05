@@ -99,7 +99,7 @@ export default function MessagesPage () {
                         style={{ color: "white", flex: 1}}
                     />
                     <IconButton color="primary"
-                                sx={{position: "absolute", right: 0}}
+                                sx={{position: "absolute", right: 0, top: -3}}
                                 onClick={handleSendMessage}
                     >
                         <SendIcon />

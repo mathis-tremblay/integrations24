@@ -18,20 +18,6 @@
     height: 100%;
     overflow-y: auto;
 }
-
-.contentWrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border-right: 10px solid transparent;
-}
-
-.content {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-}
-
 .messages::-webkit-scrollbar {
     width: 10px; /* Width of the scrollbar */
 }
@@ -50,6 +36,19 @@
 .messages::-webkit-scrollbar-thumb:hover {
     background: #c5c5c5; /* Background color of the scrollbar on hover */
     transition: background 0.15s;
+}
+
+.contentWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 10px solid transparent;
+}
+
+.content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {

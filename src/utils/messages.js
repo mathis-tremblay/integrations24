@@ -1,83 +1,80 @@
-import {v4} from 'uuid';
 import {auth, db} from "../components/firebase/firebase";
-import {arrayUnion, doc, getDoc, serverTimestamp, setDoc, updateDoc} from "firebase/firestore";
+import {arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc} from "firebase/firestore";
 
 
-// Writes the answer to the Messages collection.
-// [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, type: "answer", id: xxxxxx}, {...}]
-// Also writes the id of the answer in the User's collection.
+// Writes the answer to the User's collection.
+// [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, answer: true}, {...}]
 export async function WriteAnswer(text, userId) {
-    const id = v4();
-
     const userDoc = doc(db, "Users", userId);
-    const messagesDoc = doc(db, "Messages", id);
 
-    await setDoc(messagesDoc,
-        {
+    let currentDate = new Date();
+    await updateDoc(userDoc, {messages: arrayUnion({
             answer: true,
-            date: serverTimestamp(),
-            id: id,
+            date: currentDate,
             text: text
-        })
-
-    await updateDoc(userDoc, {messages: arrayUnion(id)})
+        })})
 }
 
-// Writes the message to the Messages collection.
-// [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, type: "message", id: xxxxxx}, {...}]
-// Also writes the id of the message in the User's collection.
+// Adds the user to the Convos collection
+// Also writes the message in the User's collection.
+// [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, answer: flase}, {...}]
 export async function WriteMessage(text) {
-    const id = v4();
 
     const user = auth.currentUser;
     if (!user) {
         throw new Error("User is not authenticated");
     }
     const userDoc = doc(db, "Users", user.uid);
-    const messagesDoc = doc(db, "Messages", id);
+    const messagesDoc = doc(db, "Convos", user.uid);
 
-    await setDoc(messagesDoc,
-        {
+    await setDoc(messagesDoc, {})
+
+    let currentDate = new Date();
+    await updateDoc(userDoc, {messages: arrayUnion({
             answer: false,
-            date: serverTimestamp(),
-            id: id,
+            date: currentDate,
             text: text,
-            user: user.uid
-        })
-
-    await updateDoc(userDoc, {messages: arrayUnion(id)})
+        })})
 }
 
-// Gets the message from Messages collection using the ids in the user's collection
+// Gets the message from User's collection using the userId argument
+// If the function is called with no argument, it takes the current user's messages
 // Returns an array of message sorted from the oldest date to the most recent. [old, ..., recent]
-export async function ReadMessages() {
+export async function ReadMessages(userId) {
 
-    const user = auth.currentUser;
-    if (!user) {
-        throw new Error("User is not authenticated");
+    if (!userId) {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error("User is not authenticated");
+        }
+        userId = user.uid;
     }
-    const userDoc = doc(db, "Users", user.uid);
+    const userDoc = doc(db, "Users", userId);
     const userDocSnap = await getDoc(userDoc);
     if (!userDocSnap.exists()) {
         throw new Error("No such document!");
     }
 
     const userData = userDocSnap.data();
-    const promises = userData.messages.map(async messageId => {
-        const messageDoc = doc(db, "Messages", messageId);
-        return await getDoc(messageDoc);
-    })
-    // List of messages object: [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, type: "message", id: xxxxxx}, {...}]
-    const messages = await Promise.all(promises);
-    const messagesData = messages.map(doc => ({ id: doc.id, ...doc.data() }));
 
-    // Returns an array of message sorted from the oldest date to the most recent. [old, ..., recent]
-    return messagesData.sort(
-        (a, b) => a.date?.toDate().getTime() - b.date?.toDate().getTime()
-    )
+    // Checks if userData.messages exists before sorting
+    if ('messages' in userData && Array.isArray(userData.messages)) {
+        // Returns an array of message sorted from the oldest date to the most recent. [old, ..., recent]
+        return userData.messages.sort(
+            (a, b) => a.date?.toDate().getTime() - b.date?.toDate().getTime()
+        )
+    } else {
+        throw new Error("No messages found!");
+    }
 }
 
-// Read a convo that an admin is having with a user.
-export async function ReadConvo(userId) {
-
+// Returns an array of the ids of all the users who sent messages
+export async function GetUsersWhoSentMessages() {
+    const convosCollection = collection(db, "Convos");
+    const querySnapshot = await getDocs(convosCollection);
+    const users = [];
+    querySnapshot.forEach((doc) => {
+        users.push(doc.id);
+    });
+    return users;
 }

@@ -30,6 +30,7 @@ function RegisterPage() {
             console.log(user);
             if (user) {
                 const leastUsedCostume = await getLeastUsedCostume();
+                let currentDate = new Date();
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
                     firstName: fname,
@@ -38,7 +39,12 @@ function RegisterPage() {
                     costume: leastUsedCostume,
                     quizzCompleted: false,
                     participatingDays: [],
-                    messages: []
+                    messages: [{
+                        text: "Salut jeune GelGifois! Si jamais tu nous poses une question, " +
+                            "vérifie tes messages ici régulièrement, tu n'auras pas de notif quand on va te répondre.",
+                        date: currentDate,
+                        answer: true
+                    }]
                 });
             }
             console.log("Inscription réussie!!");

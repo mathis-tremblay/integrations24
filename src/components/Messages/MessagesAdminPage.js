@@ -1,34 +1,114 @@
-import {InputBase, Paper} from "@mui/material";
+import {FormControl, FormHelperText, InputBase, MenuItem, Paper, Select} from "@mui/material";
 import LoadingSpinner from "../LoadingSpinner";
 import {useEffect, useRef, useState} from "react";
 import "./MessagesPageStyle.css"
 import IconButton from "@mui/material/IconButton";
 import SendIcon from '@mui/icons-material/Send';
-import {ReadMessages, WriteAnswer} from "../../utils/messages";
+import {GetUsersWhoSentMessages, ReadMessages, WriteAnswer} from "../../utils/messages";
 import MessageObject from "./MessageObject";
+import {styled} from "@mui/material/styles";
 
 
-//TODO: Rethink db so that there is chats with each person.
-//      I need to see the whole convo with the person.
-//      Also, need to put something to change chat/person
+// Create a styled Select component
+const StyledSelect = styled(Select)({
+    color: "white",
+    // Border color
+    "& .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+    },
+    // Border color on hover
+    "&:hover .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+    },
+    // Border color when focused
+    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "white"
+    },
+    // Arrow color
+    "&.MuiSelect-select:focus": {
+        "&.MuiSelect-icon": {
+            color: "white"
+        }
+    },
+    // Arrow color
+    "& .MuiSelect-icon": {
+        color: "white",
+    },
+    // Custom scrollbar styles
+    "& .MuiSelect-root": {
+        "&::-webkit-scrollbar": {
+            width: '10px',
+        },
+        "&::-webkit-scrollbar-track": {
+            background: 'rgba(241, 241, 241, 0.3)',
+            borderRadius: '20px',
+        },
+        "&::-webkit-scrollbar-thumb": {
+            background: '#e4e4e4',
+            borderRadius: '20px',
+            transition: 'background 0.3s',
+        },
+        "&::-webkit-scrollbar-thumb:hover": {
+            background: '#c5c5c5',
+            transition: 'background 0.15s',
+        },
+    },
+});
+
+const MenuProps = {
+    PaperProps: {
+        sx: {
+            color: "rgba(85, 136, 38)",
+            maxHeight: '30vh',
+            '&::-webkit-scrollbar': {
+                width: '10px',
+            },
+            '&::-webkit-scrollbar-track': {
+                background: 'rgba(241, 241, 241, 0.3)',
+                borderRadius: '20px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+                background: '#e4e4e4',
+                borderRadius: '20px',
+                transition: 'background 0.3s',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+                background: '#c5c5c5',
+                transition: 'background 0.15s',
+            },
+        },
+    },
+};
+
+
 export default function MessagesAdminPage () {
     const [loading, setLoading] = useState(true);
     const [inputText, setInputText] = useState("");
     const [messages, setMessages] = useState([])
     const [sentMessage, setSentMessage] = useState(false);
+    const [selectedUser, setSelectedUser] = useState('');
+    const [userIds, setUserIds] = useState([]);
 
     // Create a reference to the last message
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
+        async function getUserIds() {
+            const ids = await GetUsersWhoSentMessages();
+            setUserIds(ids);
+        }
+        getUserIds().then();
+    }, [])
+
+    useEffect(() => {
         async function getMessages() {
-            const messages = await ReadMessages();
+            const messages = await ReadMessages(selectedUser);
             messages.forEach(message => {message.answer = !message.answer});
             setMessages(messages);
             setLoading(false);
         }
         getMessages().then();
-    },[sentMessage])
+    },[sentMessage, selectedUser])
 
     useEffect(() => {
         // Scroll to the last message when a new message gets sent
@@ -37,6 +117,10 @@ export default function MessagesAdminPage () {
 
     const handleChange = (event) => {
         setInputText(event.target.value);
+    };
+
+    const handleUserChange = (event) => {
+        setSelectedUser(event.target.value);
     };
 
     const handleSendMessage = async () => {
@@ -54,6 +138,27 @@ export default function MessagesAdminPage () {
                 <p className="header">
                     Vous êtes un admin. Répondez aux questions des ptits jeunes!
                 </p>
+
+                <FormControl>
+                    <FormHelperText sx={{color: "white"}}>
+                        Vous êtes présentement en discussion avec l'utilisateur suivant
+                    </FormHelperText>
+                    <StyledSelect
+                        displayEmpty
+                        value={selectedUser}
+                        onChange={handleUserChange}
+                        MenuProps={MenuProps}
+                    >
+                        <MenuItem disabled value="">
+                            <em>Aucune personne</em>
+                        </MenuItem>
+                        {userIds.map((userId) => (
+                            <MenuItem key={userId} value={userId}>
+                                {userId}
+                            </MenuItem>
+                        ))}
+                    </StyledSelect>
+                </FormControl>
                 <div className="messages">
                     <div className="contentWrapper">
                         <div className="content">
@@ -103,7 +208,7 @@ export default function MessagesAdminPage () {
                         style={{ color: "white", flex: 1}}
                     />
                     <IconButton color="primary"
-                                sx={{position: "absolute", right: 0}}
+                                sx={{position: "absolute", right: 0, top: -3}}
                                 onClick={handleSendMessage}
                     >
                         <SendIcon />

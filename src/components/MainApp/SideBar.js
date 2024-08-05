@@ -8,7 +8,7 @@ import {styled} from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import {appConsts} from "../../appCfg/appConsts";
 import {ListItemButton, ListItemIcon, ListItemText, useMediaQuery} from "@mui/material";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,7 +16,6 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import ChatIcon from '@mui/icons-material/Chat';
 import LogoutIcon from "@mui/icons-material/Logout";
-import {isAdmin} from "../../utils/user";
 import {useMain} from "../../reactHooks/MainContext";
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
