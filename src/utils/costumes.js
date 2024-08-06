@@ -2,7 +2,7 @@ import {db} from "../components/firebase/firebase";
 import {doc, getDoc} from "firebase/firestore";
 import {auth} from '../components/firebase/firebase';
 
-// TODO: use analytics
+
 async function countCostumes() {
     const costumesDoc = doc(db, "Analytics", "Costumes");
     const costumesSnapshot = await getDoc(costumesDoc);

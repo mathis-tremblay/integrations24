@@ -3,6 +3,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import * as React from "react";
 import "./InfoDialogStyle.css";
+import Divider from "@mui/material/Divider";
 
 const OkButton = styled(Button)({
     backgroundColor: "white",
@@ -54,15 +55,22 @@ export default function InfoDialog({ title, desc, text, icon }) {
                 onClose={handleClose}
                 maxWidth="lg"
             >
-                <DialogTitle>{title}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
+                <DialogTitle align="center" style={{color: "rgb(43,69,19)",}}>{title}</DialogTitle>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <Divider sx={{
+                        backgroundColor: "rgb(43,69,19)",
+                        height: 2,
+                        width: "94%",
+                    }}/>
+                </div>
+                <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",}}>
+                    <DialogContentText style={{color: "rgb(43,69,19)"}}>
                         {text}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <OkButton onClick={handleClose} color="primary" variant="contained">
-                        J'ai compris!
+                    J'ai compris!
                     </OkButton>
                 </DialogActions>
             </Dialog>

@@ -5,6 +5,7 @@ import "./HorairePageStyle.css"
 import {styled} from "@mui/material/styles";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
+import Divider from "@mui/material/Divider";
 
 const OkButton = styled(Button)({
     backgroundColor: "white",
@@ -77,9 +78,16 @@ export default function HoraireDialog({ title, date, text, icon, participating, 
                     }
                 }}
             >
-                <DialogTitle>{title}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
+                <DialogTitle style={{marginLeft: "1%", color: "rgb(43,69,19)",}}>{title}</DialogTitle>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <Divider sx={{
+                        backgroundColor: "rgb(43,69,19)",
+                        height: 2,
+                        width: "94%",
+                    }}/>
+                </div>
+                <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",}}>
+                    <DialogContentText style={{color: "rgb(43,69,19)"}}>
                         {text}
                     </DialogContentText>
                 </DialogContent>

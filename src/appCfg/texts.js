@@ -5,13 +5,13 @@ export const texts = {
     //TODO:
     info: {
         infoGenerales: <p>
-            <p>Vous devez payer votre contribution de {appConsts.infos.amountToPay}$ à : trésorier@gelgif.com</p>
+            <p>Vous devez payer votre contribution de <b>{appConsts.infos.amountToPay}$</b> à : trésorier@gelgif.com</p>
             <b>Question : </b> <span style={{fontWeight: "normal"}}>integration</span> <br/>
             <b>Réponse : </b> <span style={{fontWeight: "normal"}}>gelgif</span> <br/>
             <span style={{fontWeight: "normal"}}>Ça vaut la peine je te le garanti !</span> <br/> <br/>
             <p>De plus, va chercher ta LPU (laissez-passer universitaire). C'est important pour suivre le groupe
                 sans à avoir à payer tous les trajets de bus. Les informations sont sur le MonPortail.</p>
-            <br/> <br/>
+            <br/>
             <b>Le comité intégrateur 2024</b> <br/>
             <b>GelGif</b>
         </p>,
@@ -64,16 +64,97 @@ export const texts = {
             <b>GelGif</b>
         </p>,
         frais: <p>
-            Plz paye nous
+            <p>Les frais d'intégration sont de <b>{appConsts.infos.amountToPay}$</b>. Ils couvrent la grande majorité
+                des
+                coûts pour les activités de la semaine.</p>
+            <p><em>Pas de paiement = Pas d'intégration !</em> Donc assures toi de payer avant le début des intégrations,
+                soit lundi le 2 septembre.</p>
+            <br/>
+            <p><b>Les frais couvrent les activités suivantes:</b>
+                <p>
+                    <p style={{margin: 0}}>- Votre magnifique chandail des intégrations</p>
+                    <p style={{margin: 0}}>- Diner du lundi</p>
+                    <p style={{margin: 0}}>- Entrée à la Petite Grenouille lundi soir</p>
+                    <p style={{margin: 0}}>- Les consommations du mardi</p>
+                    <p style={{margin: 0}}>- Des consommations <em>ILLIMITÉS</em> vendredi</p>
+                    <p style={{margin: 0}}>- Le transport le vendredi</p>
+                </p>
+            </p>
+            <p><b>Pas inclus dans les frais:</b>
+                <p>
+                    <p style={{margin: 0}}>- Les consommations à la Petite Grenouille le lundi</p>
+                    <p style={{margin: 0}}>- Les consommations du mercredi</p>
+                    <p style={{margin: 0}}>- Le souper du jeudi</p>
+                </p>
+            </p>
+            <br/>
+            <b>Le comité intégrateur 2024</b> <br/>
+            <b>GelGif</b>
         </p>
     },
 
     //TODO:
     day: {
-        one: "Bla",
-        two: "BlaBla",
-        three: "BlaBlaBla",
-        four: "BlaBlaBlaBla",
-        five: "BlaBlaBlaBlaBla",
+        one: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+                Bla
+            </p>,
+        two: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+                BlaBla
+            </p>,
+        three: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+                BlaBlaBla
+            </p>,
+        four: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+                BlaBlaBlaBla
+            </p>,
+        fiveSurprise: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+            <b>18h00</b>
+            <p>Rejoint nous dans le parking en face du pavillons Desjardins... Crois nous, ça vaut la peine.</p>
+        </p>,
+        fiveComplete: <p style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+        <b>18h00</b>
+                <p>Rejoint nous dans le parking en face du pavillons Desjardins. On s'en va en chalet faire le party!! La
+                    boisson est incluse, donc manque pas ça!</p>
+                <b>19h00</b>
+                <p>On vous sert des bons roteux pour souper. On sait que t'aimes boire, mais c'est important de manger
+                    aussi.</p>
+                <b>20h00</b>
+                <p>Le party commence! On a hate de te voir sur le dance floor ou bien au beerpong.</p>
+                <b>23h30</b>
+                <p>Premier départ d'autobus. Si tu es tanné ou tu ne tiens plus debout, c'est le temps de partir.</p>
+                <b>00h30</b>
+                <p>Dernier départ d'autobus. On est tous fatigué et c'est le temps de partir.</p>
+
+            </p>,
     }
 }
