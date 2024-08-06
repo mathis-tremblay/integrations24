@@ -1,7 +1,7 @@
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import React, {useState} from "react";
 import {auth, db} from "../firebase/firebase.js";
-import {setDoc, doc} from "firebase/firestore";
+import {setDoc, doc, updateDoc, increment} from "firebase/firestore";
 import {toast} from "react-toastify";
 import {appConsts} from "../../appCfg/appConsts";
 import {useNavigate} from "react-router-dom";
@@ -30,6 +30,7 @@ function RegisterPage() {
             console.log(user);
             if (user) {
                 const leastUsedCostume = await getLeastUsedCostume();
+                let currentDate = new Date();
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
                     firstName: fname,
@@ -37,7 +38,21 @@ function RegisterPage() {
                     admin: false,
                     costume: leastUsedCostume,
                     quizzCompleted: false,
+                    participatingDays: [],
+                    messages: [{
+                        text: "Salut jeune GelGifois! Si jamais tu nous poses une question, " +
+                            "vérifie tes messages ici régulièrement, tu n'auras pas de notif quand on va te répondre.",
+                        date: currentDate,
+                        answer: true
+                    }]
                 });
+                // Updating analytics
+                await updateDoc(doc(db, "Analytics", "Users"), {
+                    UserCount: increment(1)
+                })
+                await updateDoc(doc(db, "Analytics", "Costumes"), {
+                    [leastUsedCostume]: increment(1)
+                })
             }
             console.log("Inscription réussie!!");
             toast.success("Inscription réussie!!", {

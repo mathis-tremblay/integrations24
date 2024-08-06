@@ -1,6 +1,5 @@
 {
-  "hompage": "https://mathis-tremblay.github.io/integrations24",
-  "name": "test24",
+  "name": "integrations2024",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +10,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "buffer": "^6.0.3",
     "firebase": "^10.12.3",
     "material-ui-confirm": "^3.0.16",
     "react": "^18.3.1",
@@ -20,14 +20,14 @@
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.5",
-    "web-vitals": "^2.1.4"
+    "uuid": "^10.0.0",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.93.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,8 +49,13 @@
     ]
   },
   "devDependencies": {
+    "assert": "^2.1.0",
+    "constants-browserify": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "gh-pages": "^6.1.1"
+    "path-browserify": "^1.0.1",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
   }
 }

@@ -10,6 +10,8 @@ export const appConsts = {
             horaire: '/home/horaire',
             costume: '/home/costume',
             messages: '/home/messages',
+            messagesAdmin: '/home/messages-admin',
+            analytics: '/home/analyse'
         }
     },
 
@@ -18,6 +20,7 @@ export const appConsts = {
         horaire: 'Horaire',
         costume: 'Costume',
         messages: 'Messages',
+        analytics: 'Analyse'
     },
 
     infos: {

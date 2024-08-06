@@ -1,35 +1,27 @@
-import {appConsts} from "../appCfg/appConsts";
 import {db} from "../components/firebase/firebase";
-import {collection, doc, getDocs, getDoc} from "firebase/firestore";
+import {doc, getDoc} from "firebase/firestore";
 import {auth} from '../components/firebase/firebase';
 
-
+// TODO: use analytics
 async function countCostumes() {
-    const costumes = appConsts.costumes;
-    const costumeCounts = {
-        nain: 0,
-        elf: 0,
-        hobbit: 0,
-        ent: 0
-    };
+    const costumesDoc = doc(db, "Analytics", "Costumes");
+    const costumesSnapshot = await getDoc(costumesDoc);
 
-    const usersCollection = collection(db, "Users");
-    const querySnapshot = await getDocs(usersCollection);
-
-    querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const costume = data.costume;
-
-        if (costumes.includes(costume)) {
-            costumeCounts[costume]++;
-        }
-    });
-
-    return costumeCounts;
+    if (costumesSnapshot.exists()) {
+        return costumesSnapshot.data(); // returns the data in the document as an object
+    } else {
+        console.log(`No such document "Costumes" in "Analytics"!`);
+        return null;
+    }
 }
 
 export async function getLeastUsedCostume() {
     const costumeCounts = await countCostumes();
+
+    if (costumeCounts == null) {
+        return null;
+    }
+
     let leastUsedCostume = null;
     let minCount = Infinity;
 

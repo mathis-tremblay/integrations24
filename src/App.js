@@ -19,6 +19,10 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import ForgotPasswordPage from "./components/Login/ForgotPasswordPage";
 import {ConfirmProvider} from "material-ui-confirm";
+import AdminRoute from "./router/AdminRoute";
+import {MainProvider} from "./reactHooks/MainContext";
+import MessagesAdminPage from "./components/Messages/MessagesAdminPage";
+import AnalyticsPage from "./components/Analytics/AnalyticsPage";
 
 function App() {
     const [user, setUser] = useState();
@@ -48,7 +52,9 @@ function App() {
                             element={user ? (
                                     <AuthProvider>
                                         <ProtectedRoute>
-                                            <MainApp/>
+                                            <MainProvider>
+                                                <MainApp/>
+                                            </MainProvider>
                                         </ProtectedRoute>
                                     </AuthProvider>)
                                 : (<Navigate to={appConsts.routerPaths.login}/>)}
@@ -57,6 +63,10 @@ function App() {
                             <Route path={appConsts.routerPaths.home.horaire} element={<HorairePage/>}/>
                             <Route path={appConsts.routerPaths.home.costume} element={<CostumePage/>}/>
                             <Route path={appConsts.routerPaths.home.messages} element={<MessagesPage/>}/>
+                            <Route path={appConsts.routerPaths.home.messagesAdmin}
+                                   element={ <AdminRoute> <MessagesAdminPage/> </AdminRoute> }/>
+                            <Route path={appConsts.routerPaths.home.analytics}
+                                   element={ <AdminRoute> <AnalyticsPage/> </AdminRoute> }/>
                         </Route>
                     </Routes>
                     <ToastContainer/>
