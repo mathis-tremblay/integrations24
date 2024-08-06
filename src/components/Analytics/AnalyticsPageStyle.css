@@ -12,3 +12,14 @@
     color: white;
     font-size: 18px;
 }
+
+@media (max-width: 700px) {
+    .analyticsContainer {
+        font-size: 16px
+    }
+}
+@media (max-width: 400px) {
+    .analyticsContainer {
+        font-size: 14px
+    }
+}

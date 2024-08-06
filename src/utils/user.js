@@ -1,5 +1,5 @@
 import {auth, db} from "../components/firebase/firebase";
-import {doc, getDoc, updateDoc, arrayUnion, arrayRemove} from "firebase/firestore";
+import {doc, getDoc, updateDoc, arrayUnion, arrayRemove, increment} from "firebase/firestore";
 
 
 // Returns a bool that tells if the user is an admin
@@ -73,12 +73,15 @@ export async function isParticipating(day){
 export async function setParticipating(day) {
     const user = auth.currentUser;
 
+    const analyticsDoc = doc(db, "Analytics", "Participation")
     const userDoc = doc(db, "Users", user.uid);
 
     if (day > 0) {
         await updateDoc(userDoc, {participatingDays: arrayUnion(day)});
+        await updateDoc(analyticsDoc, {[day.toString()]: increment(1)})
     }
     else {
         await updateDoc(userDoc, {participatingDays: arrayRemove(-day)});
+        await updateDoc(analyticsDoc, {[(day*(-1)).toString()]: increment(-1)})
     }
 }

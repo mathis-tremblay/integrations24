@@ -1,7 +1,7 @@
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import React, {useState} from "react";
 import {auth, db} from "../firebase/firebase.js";
-import {setDoc, doc} from "firebase/firestore";
+import {setDoc, doc, updateDoc, increment} from "firebase/firestore";
 import {toast} from "react-toastify";
 import {appConsts} from "../../appCfg/appConsts";
 import {useNavigate} from "react-router-dom";
@@ -46,6 +46,13 @@ function RegisterPage() {
                         answer: true
                     }]
                 });
+                // Updating analytics
+                await updateDoc(doc(db, "Analytics", "Users"), {
+                    UserCount: increment(1)
+                })
+                await updateDoc(doc(db, "Analytics", "Costumes"), {
+                    [leastUsedCostume]: increment(1)
+                })
             }
             console.log("Inscription réussie!!");
             toast.success("Inscription réussie!!", {
