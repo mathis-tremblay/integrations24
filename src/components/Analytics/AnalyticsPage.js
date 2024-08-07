@@ -6,7 +6,7 @@ import {db} from "../firebase/firebase";
 import Divider from "@mui/material/Divider";
 import * as React from "react";
 
-// TODO: faire autre collection firebase pour les Analytics.
+
 export default function AnalyticsPage() {
     const [loading, setLoading] = useState(false);
     const [users, setUsers] = useState(0);
@@ -47,39 +47,41 @@ export default function AnalyticsPage() {
         <div>
             <LoadingSpinner loading={loading}/>
             <div className="analyticsContainer">
-                <p>Nombre d'<b>utilisateurs</b> : {users}</p>
-                {/*Nb 1er annee et vieux ?*/}
-                <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <Divider sx={{
-                        backgroundColor: "white",
-                        height: 3,
-                        width: "80%",
-                        marginTop: "1%",
-                        marginBottom: "-1%"
-                    }}/>
+                <div className="innerContainer">
+                    <p>Nombre d'<b>utilisateurs</b> : {users}</p>
+                    {/*Nb 1er annee et vieux ?*/}
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        <Divider sx={{
+                            backgroundColor: "white",
+                            height: 3,
+                            width: "80%",
+                            marginTop: "1%",
+                            marginBottom: "-1%"
+                        }}/>
+                    </div>
+                    <br/>
+                    <p>Nombre de chaque <b>costume</b></p>
+                    <p><b>Ents</b> : {ents} </p>
+                    <p><b>Hobbits</b> : {hobbits}</p>
+                    <p><b>Nains</b> :  {nains}</p>
+                    <p><b>Elfs</b> :  {elfs}</p>
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        <Divider sx={{
+                            backgroundColor: "white",
+                            height: 3,
+                            width: "80%",
+                            marginTop: "1%",
+                            marginBottom: "-1%"
+                        }}/>
+                    </div>
+                    <br/>
+                    <p>Nombre de <b>participants</b> aux journées</p>
+                    <p><b>1er</b> jour : {day1}</p>
+                    <p><b>2ième</b> jour : {day2}</p>
+                    <p><b>3ième</b> jour : {day3}</p>
+                    <p><b>4ième</b> jour : {day4}</p>
+                    <p><b>5ième</b> jour : {day5}</p>
                 </div>
-                <br/>
-                <p>Nombre de chaque <b>costume</b></p>
-                <p><b>Ents</b> : {ents} </p>
-                <p><b>Hobbits</b> : {hobbits}</p>
-                <p><b>Nains</b> :  {nains}</p>
-                <p><b>Elfs</b> :  {elfs}</p>
-                <div style={{display: 'flex', justifyContent: 'center'}}>
-                    <Divider sx={{
-                        backgroundColor: "white",
-                        height: 3,
-                        width: "80%",
-                        marginTop: "1%",
-                        marginBottom: "-1%"
-                    }}/>
-                </div>
-                <br/>
-                <p>Nombre de <b>participants</b> aux journées</p>
-                <p><b>1er</b> jour : {day1}</p>
-                <p><b>2ième</b> jour : {day2}</p>
-                <p><b>3ième</b> jour : {day3}</p>
-                <p><b>4ième</b> jour : {day4}</p>
-                <p><b>5ième</b> jour : {day5}</p>
             </div>
         </div>
     )

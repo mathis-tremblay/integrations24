@@ -52,6 +52,34 @@ export async function setQuizzCompleted(quizzCompleted) {
     await updateDoc(userDoc, { quizzCompleted: quizzCompleted });
 }
 
+export async function getQuestionsAnswered(){
+    const user = auth.currentUser;
+    if (!user) {
+        throw new Error("User is not authenticated");
+    }
+
+    let questionsAnswered = 0;
+    const userDoc = doc(db, "Users", user.uid);
+    const docSnap = await getDoc(userDoc);
+    if (docSnap.exists()) {
+        const data = docSnap.data();
+        questionsAnswered = data.questionsAnswered;
+    } else {
+        throw new Error("No such document!");
+    }
+    return questionsAnswered;
+}
+
+export async function setQuestionsAnswered(questionsAnswered) {
+    const user = auth.currentUser;
+    if (!user) {
+        throw new Error("User is not authenticated");
+    }
+    const userDoc = doc(db, "Users", user.uid);
+
+    await updateDoc(userDoc, { questionsAnswered: questionsAnswered });
+}
+
 // Returns a boolean that tells if the user is participating on the day from the argument
 export async function isParticipating(day){
     const user = auth.currentUser;

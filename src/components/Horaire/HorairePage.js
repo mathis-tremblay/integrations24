@@ -5,17 +5,31 @@ import PotionIcon from "../../images/potion_icon.png";
 import HelmetIcon from "../../images/helmet_icon.png";
 import BookIcon from "../../images/book_icon.png";
 import DaggersIcon from "../../images/daggers_icon.png";
+import CrownIcon from "../../images/crown_icon.png"
 import { isParticipating, setParticipating } from "../../utils/user";
 import "./HorairePageStyle.css";
 import {texts} from "../../appCfg/texts";
 
 const days = [
-    { id: 1, title: "Activités et Ptite Gre", text: texts.day.one, date: "02/09/2024", icon: HelmetIcon },
-    { id: 2, title: "Rally appart", text: texts.day.two, date: "03/09/2024", icon: DaggersIcon },
-    { id: 3, title: "Ptite soirée relax", text: texts.day.three , date: "04/09/2024", icon: BookIcon },
-    { id: 4, title: "Festin", text: texts.day.four, date: "05/09/2024", icon: ChestIcon },
-    { id: 5, title: "GROS PARTY !!!", text: texts.day.five, date: "06/09/2024", icon: PotionIcon },
+    { id: 1, title: "Activités et Ptite Gre", text: texts.day.one, date: "Lundi 2 septembre", icon: HelmetIcon },
+    { id: 2, title: "Rally appart", text: texts.day.two, date: "Mardi 3 septembre", icon: DaggersIcon },
+    { id: 3, title: "Ptite soirée relax", text: texts.day.three , date: "Mercredi 4 septembre", icon: BookIcon },
+    { id: 4, title: "Festin", text: texts.day.four, date: "Jeudi 5 septembre", icon: ChestIcon },
 ];
+
+// Day 5 events
+const day5_0 = { id: 5.0, title: "GROSSE surprise...", text: texts.day.fiveSurprise, date: "Vendredi 6 septembre", icon: CrownIcon };
+const day5_1 = { id: 5.1, title: "GROS PARTY !!!", text: texts.day.fiveComplete, date: "Vendredi 6 septembre", icon: PotionIcon };
+
+// Get current date and compare it with 4th of September 2024 to reveal the surprise
+const currentDate = new Date();
+const limitDate = new Date('09/05/2024');
+
+if (currentDate >= limitDate) {
+    days.push(day5_1);
+} else {
+    days.push(day5_0);
+}
 
 export default function HorairePage() {
     const [participation, setParticipation] = useState(days.map(() => false));

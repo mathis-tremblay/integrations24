@@ -6,11 +6,35 @@
     width: 70vw;
     border-radius: 20px;
     flex-direction: column;
-    padding: 30px 20px 30px 30px;
+    padding: 30px 0 30px 10px;
     position: relative;
     overflow: hidden;
     color: white;
     font-size: 18px;
+}
+
+.innerContainer {
+    margin: 0 1%;
+    overflow-y: auto;
+}
+.innerContainer::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.innerContainer::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.3); /* Background color of the track */
+    border-radius: 20px; /* To make it rounded */
+}
+
+.innerContainer::-webkit-scrollbar-thumb {
+    background: #e4e4e4; /* Background color of the scrollbar itself */
+    border-radius: 20px; /* To make it rounded */
+    transition: background 0.3s;
+}
+
+.innerContainer::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5; /* Background color of the scrollbar on hover */
+    transition: background 0.15s;
 }
 
 @media (max-width: 700px) {
