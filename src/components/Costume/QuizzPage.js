@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./CostumePageStyle.css"
-import {setQuizzCompleted} from "../../utils/user";
+import {getQuestionsAnswered, setQuestionsAnswered, setQuizzCompleted} from "../../utils/user";
+import LoadingSpinner from "../LoadingSpinner";
 
 
 const questions = [
@@ -27,13 +28,29 @@ const questions = [
     ];
 
 export default function QuizzPage({setQuizzEnd}) {
+    const [loading, setLoading] = useState(true)
     const [questionAnswered, setQuestionAnswered] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-    const handleNextQuestion = () => {
+    useEffect(() => {
+        async function fetchQuestionsAnswered() {
+            try {
+                const noQuestionsAnswered = await getQuestionsAnswered();
+                setQuestionAnswered(noQuestionsAnswered);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchQuestionsAnswered().then();
+    }, []);
+
+    const handleNextQuestion = async () => {
         if (questionAnswered < questions.length - 1) {
             setQuestionAnswered(questionAnswered + 1);
             setSelectedAnswer(null)
+            await setQuestionsAnswered(questionAnswered + 1);
         } else {
             setQuizzEnd(true)
             setQuizzCompleted(true).then()
@@ -45,39 +62,42 @@ export default function QuizzPage({setQuizzEnd}) {
     };
 
     return (
-        <div className="CenterContainer">
-            <div className="QuizzHeader">
-                Bonjour chère GelGifois.
-            </div>
+        <div>
+            <LoadingSpinner loading={loading}/>
+            <div className="CenterContainer">
+                <div className="QuizzHeader">
+                    Bonjour chère GelGifois.
+                </div>
 
-            <div className="QuizzDialog" style={{"marginTop": 5}}>
-                Avant de te joindre aux rangs de notre armée, réponds à 5 questions
-                qui vont nous aider à connaitre ton futur rôle dans la bataille...
-            </div>
+                <div className="QuizzDialog" style={{"marginTop": 5}}>
+                    Avant de te joindre aux rangs de notre armée, réponds à 5 questions
+                    qui vont nous aider à connaitre ton futur rôle dans la bataille...
+                </div>
 
-            <div className="QuizzDialog" style={{"marginTop": "8%", textAlign: "center"}}>
+                <div className="QuizzDialog" style={{"marginTop": "8%", textAlign: "center"}}>
 
-                <p>{questions[questionAnswered].question}</p>
+                    <p>{questions[questionAnswered].question}</p>
 
-                <div className="ChoicesContainer">
-                    {questions[questionAnswered].choices.map((choice, index) => (
-                        <button key={index} className={`ChoiceButton ${selectedAnswer === index ? "Active" : ""}`}
-                                onClick={() => handleAnswerClick(index)}>
-                            {choice}
+                    <div className="ChoicesContainer">
+                        {questions[questionAnswered].choices.map((choice, index) => (
+                            <button key={index} className={`ChoiceButton ${selectedAnswer === index ? "Active" : ""}`}
+                                    onClick={() => handleAnswerClick(index)}>
+                                {choice}
+                            </button>
+                        ))}
+                    </div>
+                    <div style={{position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", width: "70%"}}>
+                        <button onClick={handleNextQuestion} className="ChangeQuestionButton" disabled={selectedAnswer === null}
+                        >
+                            {questionAnswered === questions.length - 1 ?
+                                "Fin du quizz" :
+                                "Question suivante"
+                            }
                         </button>
-                    ))}
-                </div>
-                <div style={{position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", width: "70%"}}>
-                    <button onClick={handleNextQuestion} className="ChangeQuestionButton" disabled={selectedAnswer === null}
-                    >
-                        {questionAnswered === questions.length - 1 ?
-                            "Fin du quizz" :
-                            "Question suivante"
-                        }
-                    </button>
-                    <p className="NbQuestionRep">{`${questionAnswered} question répondue sur 5`}</p>
-                </div>
+                        <p className="NbQuestionRep">{`${questionAnswered} question répondue sur 5`}</p>
+                    </div>
 
+                </div>
             </div>
         </div>
     );

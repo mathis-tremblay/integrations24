@@ -124,7 +124,7 @@ export default function MessagesAdminPage () {
     };
 
     const handleSendMessage = async () => {
-        if (inputText !== "") await WriteAnswer(inputText, "73E27DgNxbcYXvbW2G6x5690DWt1");
+        if (inputText) await WriteAnswer(inputText, selectedUser);
         setInputText("");
         setSentMessage(!sentMessage);
         // Scroll to the last message when a new message is sent
