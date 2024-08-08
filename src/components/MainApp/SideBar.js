@@ -18,6 +18,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import LogoutIcon from "@mui/icons-material/Logout";
 import {useMain} from "../../reactHooks/MainContext"
 import BarChartIcon from '@mui/icons-material/BarChart';
+import {auth} from "../firebase/firebase";
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -66,6 +67,8 @@ const SideBar = () => {
 
     const handleLogout = () => {
         navigate(appConsts.routerPaths.login);
+        localStorage.setItem("loggedIn", "false");
+        auth.getInstance().signOut().then();
     }
 
     const handleTabChange = (event, newValue) => {
