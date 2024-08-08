@@ -19,7 +19,7 @@ function LoginPage() {
             localStorage.setItem("loggedIn", "true");
             console.log("User logged in Successfully");
             navigate(appConsts.routerPaths.home.info)
-            toast.success("Connection réussie!", {
+            toast.success("Connexion réussie!", {
                 position: "top-center",
                 autoClose: 1000 // display for 1s
             });

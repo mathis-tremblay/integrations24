@@ -17,7 +17,7 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une chemise rentré dans les pantalons de couleur 99±1% GΩ.
+                        Une chemise rentrée dans les pantalons de couleur 99±1% GΩ.
                     </div>
                 </ListItemText>
             </ListItem>

@@ -39,6 +39,7 @@ function RegisterPage() {
                     costume: leastUsedCostume,
                     quizzCompleted: false,
                     participatingDays: [],
+                    questionsAnswered: 0,
                     messages: [{
                         text: "Salut jeune GelGifois! Si jamais tu nous poses une question, " +
                             "vérifie tes messages ici régulièrement, tu n'auras pas de notif quand on va te répondre.",

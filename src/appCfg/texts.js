@@ -11,7 +11,7 @@ export const texts = {
                 lorsque le pont de Québec tomba en 1907. De grands anneaux furent forgés. Trois furent donnés aux
                 ingénieurs
                 informatiques et électriques, les plus sages et les plus respectables de tous les êtres. Sept, aux
-                ingénieurs minier et chimique, grands mineurs et fabriquant du nord. Et neuf, neuf anneaux furent donnés
+                ingénieurs minier et chimique, grands mineurs et fabriquant du nord. Et neuf anneaux furent donnés
                 aux
                 ingénieurs civils et mécaniques qui par-dessus tout désiraient le pouvoir, car à travers ces anneaux
                 furent
