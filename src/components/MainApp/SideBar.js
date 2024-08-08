@@ -105,7 +105,8 @@ const SideBar = () => {
                             alignItems: 'center',
                             justifyContent: 'flex-end',
                             flex: '0 0 auto',
-                            ml: {xs: 4.35, sm: 3.35}
+                            ml: {xs: 4.35, sm: 3.35},
+                            py: "2vh"
                         }}
                     >
                         {open ?
@@ -113,7 +114,9 @@ const SideBar = () => {
                                 <ChevronLeftIcon sx={{"color": "white"}}/>
                             </IconButton>
                             :
-                            <IconButton onClick={() => toggleDrawer()} sx={{ justifyContent: { xs: 'center', sm: 'flex-end' }}}>
+                            <IconButton onClick={() => toggleDrawer()}
+                                        sx={{ justifyContent: { xs: 'center', sm: 'flex-end' }}}
+                            >
                                 <MenuIcon sx={{ fontSize: '1.8rem', "color": "white" }} />
                             </IconButton>
                         }
@@ -128,8 +131,10 @@ const SideBar = () => {
             <List component='nav' sx={{ py: 0 }} value={tab}>
                 <ListItemButton
                     onClick={(event) => handleTabChange(event, appConsts.menus.infos)}
+                    sx={{py: "2vh"}}
                 >
-                    <ListItemIcon>
+                    <ListItemIcon
+                        sx={{py: "2vh"}}>
                         <InfoIcon sx={{"color": "white"}}/>
                     </ListItemIcon>
                     <ListItemText primary={appConsts.menus.infos} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }} />
@@ -137,8 +142,10 @@ const SideBar = () => {
 
                 <ListItemButton
                     onClick={(event) => handleTabChange(event, appConsts.menus.horaire)}
+                    sx={{py: "2vh"}}
                 >
-                    <ListItemIcon>
+                    <ListItemIcon
+                        sx={{py: "2vh"}}>
                         <DateRangeIcon sx={{"color": "white"}}/>
                     </ListItemIcon>
                     <ListItemText primary={appConsts.menus.horaire} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
@@ -146,8 +153,10 @@ const SideBar = () => {
 
                 <ListItemButton
                     onClick={(event) => handleTabChange(event, appConsts.menus.costume)}
+                    sx={{py: "2vh"}}
                 >
-                    <ListItemIcon>
+                    <ListItemIcon
+                        sx={{py: "2vh"}}>
                         <CheckroomIcon sx={{"color": "white"}}/>
                     </ListItemIcon>
                     <ListItemText primary={appConsts.menus.costume} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
@@ -155,8 +164,10 @@ const SideBar = () => {
 
                 <ListItemButton
                     onClick={(event) => handleTabChange(event, appConsts.menus.messages)}
+                    sx={{py: "2vh"}}
                 >
-                    <ListItemIcon>
+                    <ListItemIcon
+                        sx={{py: "2vh"}}>
                         <ChatIcon sx={{"color": "white"}}/>
                     </ListItemIcon>
                     <ListItemText primary={appConsts.menus.messages} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
@@ -165,8 +176,10 @@ const SideBar = () => {
                 {!admin ? null :
                     <ListItemButton
                         onClick={(event) => handleTabChange(event, appConsts.menus.analytics)}
+                        sx={{py: "2vh"}}
                     >
-                        <ListItemIcon>
+                        <ListItemIcon
+                            sx={{py: "2vh"}}>
                             <BarChartIcon sx={{"color": "white"}}/>
                         </ListItemIcon>
                         <ListItemText primary={appConsts.menus.analytics} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>
@@ -176,8 +189,10 @@ const SideBar = () => {
                 <Divider  sx={{"backgroundColor": "white", "height": 3}}/>
                 <ListItemButton
                     onClick={handleLogout}
+                    sx={{py: "2vh"}}
                 >
-                    <ListItemIcon>
+                    <ListItemIcon
+                        sx={{py: "2vh"}}>
                         <LogoutIcon sx={{"marginLeft": 0.2, "color": "white"}}/>
                     </ListItemIcon>
                     <ListItemText primary={"Se déconnecter"} primaryTypographyProps={{ sx: { fontSize: '1.3rem' } }}/>

@@ -11,6 +11,9 @@ const theme = createTheme({
             main: "#FFFFFF",
         }
     },
+    typography: {
+        fontFamily: "Ringbearer",
+    }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

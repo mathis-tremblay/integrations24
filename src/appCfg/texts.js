@@ -50,7 +50,7 @@ export const texts = {
             </p>
             <p>
                 Cependant, pour participer à ces activités, tu dois payer ta contribution
-                de <b>{appConsts.infos.amountToPay}$</b> à <em>trésorier@gelgif.com</em>.
+                de <b>{appConsts.infos.amountToPay}$</b> à <em>trésorier@gelgif.com</em> (en minuscule).
             </p>
             <p>
                 <b>Question :</b> <span style={{fontWeight: "normal"}}>integration</span> <br/>
@@ -63,7 +63,7 @@ export const texts = {
                 environnement pour les 4 (et plus) prochaines années. De plus, tous les membres du comité ont préalablement
                 suivi la formation sur la prévention des violences de nature sexuelle dans des activités sociales et la
                 formation sur la consommation d’alcool lors d’activités à l’Université Laval. Ton bien-être nous tient à
-                cœur et nous souhaitons que les activités d’intégration restent agréables et amusantes !
+                coeur et nous souhaitons que les activités d’intégration restent agréables et amusantes !
             </p>
             <p>
                 Finalement, va chercher ta LPU (laissez-passer universitaire). C'est important pour suivre le groupe
@@ -94,7 +94,7 @@ export const texts = {
             <p>Les frais d'intégration sont de <b>{appConsts.infos.amountToPay}$</b>. Ils couvrent la grande majorité
                 des coûts pour les activités de la semaine.</p>
             <p><em>Pas de paiement = Pas d'intégration !</em> Donc assure-toi de payer ta contribution
-                de <b>{appConsts.infos.amountToPay}$</b> à <em>trésorier@gelgif.com</em> avant le début des
+                de <b>{appConsts.infos.amountToPay}$</b> à <em>trésorier@gelgif.com</em> (en minuscule) avant le début des
                 intégrations,
                 soit lundi le 2 septembre.</p>
             <b>Question : </b> <span style={{fontWeight: "normal"}}>integration</span> <br/>
