@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 
+@font-face {
+  font-family: 'Ringbearer';
+  src: url('./font/RINGM___.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,7 +15,7 @@ body {
   min-height: 100vh;
   display: flex;
   font-weight: 400;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Ringbearer", sans-serif;
 }
 
 h1,
@@ -17,9 +25,11 @@ h4,
 h5,
 h6,
 label,
-span {
-  font-weight: 500;
-  font-family: "Fira Sans", sans-serif;
+span,
+div,
+input
+{
+  font-family: "Ringbearer", sans-serif;
 }
 
 body,
