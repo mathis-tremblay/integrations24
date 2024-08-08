@@ -83,8 +83,7 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et une quote
-                        d'Innoncent en HEX:
+                        Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et l'incroyable quote en HEX:
                         <em> Je n'en dirai pas plus, il faut quand même que ceux qui ont A+ méritent leur note!</em>
                     </div>
                 </ListItemText>
