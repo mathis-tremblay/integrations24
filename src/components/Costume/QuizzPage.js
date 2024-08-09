@@ -90,7 +90,7 @@ export default function QuizzPage({setQuizzEnd}) {
                         <button onClick={handleNextQuestion} className="ChangeQuestionButton" disabled={selectedAnswer === null}
                         >
                             {questionAnswered === questions.length - 1 ?
-                                "Fin du quizz" :
+                                "Fin du quiz" :
                                 "Question suivante"
                             }
                         </button>

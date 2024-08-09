@@ -68,7 +68,7 @@ const SideBar = () => {
     const handleLogout = () => {
         navigate(appConsts.routerPaths.login);
         localStorage.setItem("loggedIn", "false");
-        auth.getInstance().signOut().then();
+        auth.signOut().then();
     }
 
     const handleTabChange = (event, newValue) => {
