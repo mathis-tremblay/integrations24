@@ -65,6 +65,17 @@ export const texts = {
                 formation sur la consommation d’alcool lors d’activités à l’Université Laval. Ton bien-être nous tient à
                 coeur et nous souhaitons que les activités d’intégration restent agréables et amusantes !
             </p>
+            <br/>
+            <b>À APPORTER :</b>
+            <p>
+                Tu dois avoir sur toi, EN TOUT TEMPS, une <b>tranche de pain</b> pendant toute la semaine (pas seulement
+                pendant les évènements, mais TOUTE la semaine, même pendant les cours). Sans blague, si tu n'as pas
+                de pain, tu seras sacrifié dans la Montagne du Destin.
+            </p>
+            <p>
+                En plus de la tranche de pain, tu dois te présenter le premier jour des intégrations avec MINIMUM 20
+                goupilles de canette. Plus tu en as, plus tu as de chances de traverser le Mordor en un morceau.
+            </p>
             <p>
                 Finalement, va chercher ta LPU (laissez-passer universitaire). C'est important pour suivre le groupe
                 sans avoir à payer tous les trajets de bus. Les informations sont sur le MonPortail.
@@ -86,7 +97,7 @@ export const texts = {
             <p>Pour participer aux activités, coche la case <em>Je participe</em> dans l'onglet Horaire pour chaque
                 activité que tu souhaites rejoindre. Par contre, pour participer, il faut <b>payer</b> !</p>
             <p>Tu peux amener tes consommations, mais AUCUN contenant en verre n'est permis.</p>
-            <p>N'oublie pas ta <b>LPU</b> !</p>
+            <p>N'oublie pas ta <b>LPU</b>, ta <b>tranche de pain</b> et tes <b>goupilles</b> !</p>
             <b>Le comité intégrateur 2024</b> <br/>
             <b>GelGif</b>
         </p>,
@@ -132,8 +143,37 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            Bla
+            <b>8h15 - Accueil 🚪</b>
+            <p>
+                Arrive déguisé au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
+            </p>
+            <b>8h30 - Visite du compté 👀</b>
+            <p>
+                On vous fait visiter le compté (l’uni).
+            </p>
+            <b>9h00 - L’aventure commence 🌋</b>
+            <p>
+                Vous commencez la grande épopée vers le Mordor. En passant par la mine de Moria et la citée Elfique de
+                Rivendell, la prochaine destination est le parc des intégrations. Si tu n’as pas d’alcool et que tu en
+                veux pour le reste de l’aventure, on passe en chercher. Attention aux Nazguls!
+            </p>
+            <b>10h00 - Activités au parc 🌳</b>
+            <p>
+                Il faut tisser des liens forts entre membres de la communauté de l’anneau! Tu va apprendre à connaître
+                tes confrères. Attention, ça risque d’être salissant, donc apportes des vêtements de rechange.
+            </p>
+            <b>12h00 - Pizz et chandails 🍕</b>
+            <p>Ouf, bouger autant ça creuse l’appétit! On te nourrit pour combler ça avec de la bonne pizza. Ya des
+                options végé aussi, aucun stress.</p>
+            <b>14h00 - Débrouille-toi 🤷</b>
+            <p>Tu peux faire ce que tu veux. Tu devrais probablement te reposer avant la soirée, mais c’est toi qui
+                décides! Nous on va chiller au RÉGIÉ si jamais.
+            </p>
+            <b>20h00 – 23h00 : Soirée Ptite-Gre!!! ‍🐸</b>
+            <p>Attache ton capuchon ça part! Rejoins-nous au bar la Ptite-Grenouille avec ton chandail d’intégré. Bar,
+                DJ, beer-pong et options sans-alcool, y’en a pour tout le monde. Apporte une carte d’identité.</p>
         </p>,
+
         two: <p style={{
             display: "flex",
             flexDirection: "column",
@@ -142,7 +182,8 @@ export const texts = {
         }}>
             <b>17h00 - On va t'occuper ⚽️</b>
             <p>
-            On se retrouve sur le Grand Axe pour souper (amène un lunch) et jouer à des jeux genre spikeball et frisbee.
+                On se retrouve sur le Grand Axe pour souper (amène un lunch) et jouer à des jeux genre spikeball et
+                frisbee.
             </p>
             <b>19h00 - Rallye d'apparts 🥴</b>
             <>"It's not about being the best, but about being better than you were yesterday" - George St-Pierre</>
