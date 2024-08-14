@@ -5,9 +5,13 @@ export const texts = {
     //TODO:
     info: {
         bienvenue: <p>
-            <p>Le monde a changé. Je le vois dans l’eau, je le ressens dans la terre, je le sens dans l’air. Beaucoup de
-                ce
-                qui existait jadis est perdu, car aucun de ceux qui vivent aujourd’hui ne s’en souvient. Tout commença
+            <p>Le monde a changé.<br/>
+                Je le vois dans l’eau,<br/>
+                je le ressens dans la terre,<br/>
+                je le sens dans l’air.<br/>
+                Beaucoup de ce qui existait jadis est perdu, car aucun de ceux qui vivent aujourd’hui ne s’en
+                souvient.<br/><br/>
+                Tout commença
                 lorsque le pont de Québec tomba en 1907. De grands anneaux furent forgés. Trois furent donnés aux
                 ingénieurs
                 informatiques et électriques, les plus sages et les plus respectables de tous les êtres. Sept, aux
@@ -15,11 +19,11 @@ export const texts = {
                 aux
                 ingénieurs civils et mécaniques qui par-dessus tout désiraient le pouvoir, car à travers ces anneaux
                 furent
-                transmises la force et la volonté de construire de grandes choses. Mais ils furent tous dupés, car un
-                autre
-                anneau fut forgé. </p>
+                transmises la force et la volonté de construire de grandes choses.
+            </p>
             <br/>
-            <p>Sous le fleuve Saint-Laurent, avec les fragments du pont de Québec, les septs gardiens, Seigneurs des
+            <p>Mais ils furent tous dupés, car un autre anneau fut forgé. Sous le fleuve Saint-Laurent, avec les
+                fragments du pont de Québec, les septs gardiens, Seigneurs des
                 ingénieurs forgèrent en secret un maître anneau pour gouverner tous les autres. Dans cet anneau, ils
                 déversèrent leurs cruautés, leurs malveillances et leurs volontés d’empêcher tout autre d’obtenir des
                 anneaux de pouvoir. Un anneau pour les gouverner tous. Le pouvoir de l’anneau ne pouvait être vaincu.
@@ -137,44 +141,52 @@ export const texts = {
 
     //TODO:
     day: {
-        one: <p style={{
+        one: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
         }}>
             <b>8h15 - Accueil 🚪</b>
-            <p>
-                Arrive déguisé au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
+            <p style={{textAlign: "center"}}>
+                Arrivez déguisés au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
+                <br/>"Some days are arder than oders, but those are the one that count the most."  - George St-Pierre
             </p>
             <b>8h30 - Visite du compté 👀</b>
-            <p>
+            <p style={{textAlign: "center"}}>
                 On vous fait visiter le compté (l’uni).
             </p>
             <b>9h00 - L’aventure commence 🌋</b>
-            <p>
+            <p style={{textAlign: "center"}}>
                 Vous commencez la grande épopée vers le Mordor. En passant par la mine de Moria et la citée Elfique de
                 Rivendell, la prochaine destination est le parc des intégrations. Si tu n’as pas d’alcool et que tu en
-                veux pour le reste de l’aventure, on passe en chercher. Attention aux Nazguls!
+                veux pour le reste de l’aventure, on passe en chercher.
+                <br/>Attention aux Nazguls!
             </p>
             <b>10h00 - Activités au parc 🌳</b>
-            <p>
-                Il faut tisser des liens forts entre membres de la communauté de l’anneau! Tu va apprendre à connaître
+            <p style={{textAlign: "center"}}>
+                Il faut tisser des liens forts entre membres de la communauté de l’anneau! Tu vas apprendre à connaître
                 tes confrères. Attention, ça risque d’être salissant, donc apportes des vêtements de rechange.
             </p>
             <b>12h00 - Pizz et chandails 🍕</b>
-            <p>Ouf, bouger autant ça creuse l’appétit! On te nourrit pour combler ça avec de la bonne pizza. Ya des
-                options végé aussi, aucun stress.</p>
+            <p style={{textAlign: "center"}}>
+                Ouf, bouger autant ça creuse l’appétit! On te nourrit pour combler ça avec de la bonne pizza. Ya des
+                options végé aussi, aucun stress.
+            </p>
             <b>14h00 - Débrouille-toi 🤷</b>
-            <p>Tu peux faire ce que tu veux. Tu devrais probablement te reposer avant la soirée, mais c’est toi qui
-                décides! Nous on va chiller au RÉGIÉ si jamais.
+            <p style={{textAlign: "center"}}>
+                Tu peux faire ce que tu veux. Tu devrais probablement te reposer avant la soirée, mais c’est toi qui
+                décides! Nous on va chiller au RÉGIÉ, si jamais.
             </p>
             <b>20h00 – 23h00 : Soirée Ptite-Gre!!! ‍🐸</b>
-            <p>Attache ton capuchon ça part! Rejoins-nous au bar la Ptite-Grenouille avec ton chandail d’intégré. Bar,
-                DJ, beer-pong et options sans-alcool, y’en a pour tout le monde. Apporte une carte d’identité.</p>
-        </p>,
+            <p style={{textAlign: "center"}}>
+                Attache ton capuchon, ça part! Rejoins-nous au bar la P’tite Grenouille avec ton chandail d’intégré.
+                Bar, DJ, beer-pong et options sans-alcool, y’en a pour tout le monde. Apporte une carte d’identité.
+                (2300 Ch. Ste-Foy, Québec)
+            </p>
+        </div>,
 
-        two: <p style={{
+        two: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -192,24 +204,38 @@ export const texts = {
             <p>Si t'as encore de l'énergie, suis-nous.</p>
             <b>??h?? - Chu chaud, j'veux une poutine 🍟</b>
             <p>Pour ceux qui veulent finir ça en beauté --> au Salvatore!</p>
-        </p>,
-        three: <p style={{
+        </div>,
+        three: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
         }}>
             BlaBlaBla
-        </p>,
-        four: <p style={{
+        </div>,
+        four: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
         }}>
-            BlaBlaBlaBla
-        </p>,
-        fiveSurprise: <p style={{
+            <b>18h00 - Souper chic à La Chope Gobeline 🎩</b>
+            <p>
+                Rejoins nous à La Chope Gobeline pour un souper chic. C’est l’occasion de te vêtir d’un beau kit!
+                (966 Boulevard René-Lévesque Ouest, Québec)
+            </p>
+            <b>19h30 - Assignation des parrains</b>
+            <p>
+                Tu vas enfin connaître l’identité de ton parrain/marainne! Cette personne sera ton guide/support
+                tout le long de ta première année.
+            </p>
+            <b>21h00 - Activités à l’uni 🎮</b>
+            <p>
+                On te prépare pleins d’activités! Au menu: wikiwars, compétition de smash, génie en herbe et plus encore.
+                Ne rate pas ça!
+            </p>
+        </div>,
+        fiveSurprise: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -217,8 +243,8 @@ export const texts = {
         }}>
             <b>18h00 - ❓❓❓</b>
             <p>Rejoins-nous dans le parking en face du pavillon Desjardins... Crois nous, ça vaut la peine.</p>
-        </p>,
-        fiveComplete: <p style={{
+        </div>,
+        fiveComplete: <div style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -232,10 +258,10 @@ export const texts = {
                 aussi.</p>
             <b>20h00 - PARTYYYYYY 🍻</b>
             <p>Le party commence! On a hâte de te voir sur le dance floor ou bien au beer pong.</p>
-            <b>23h30 - Premier départ 👋</b>
+            <b>00h00 - Premier départ 👋</b>
             <p>Premier départ d'autobus. Si tu es tanné ou tu ne tiens plus debout, c'est le temps de partir.</p>
-            <b>00h30 - Dernier départ 😴</b>
+            <b>01h00 - Dernier départ 😴</b>
             <p>Dernier départ d'autobus. On est tous fatigués et c'est le temps de partir.</p>
-        </p>,
+        </div>,
     }
 }
