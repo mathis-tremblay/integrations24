@@ -14,11 +14,11 @@ const days = [
     { id: 1, title: "Activités et Ptite Gre", text: texts.day.one, date: "Lundi 2 septembre", icon: HelmetIcon },
     { id: 2, title: "Rally appart", text: texts.day.two, date: "Mardi 3 septembre", icon: DaggersIcon },
     { id: 3, title: "Ptite soirée relax", text: texts.day.three , date: "Mercredi 4 septembre", icon: BookIcon },
-    { id: 4, title: "Festin", text: texts.day.four, date: "Jeudi 5 septembre", icon: ChestIcon },
+    { id: 4, title: "Festin du roi", text: texts.day.four, date: "Jeudi 5 septembre", icon: CrownIcon },
 ];
 
 // Day 5 events
-const day5_0 = { id: 5.0, title: "GROSSE surprise...", text: texts.day.fiveSurprise, date: "Vendredi 6 septembre", icon: CrownIcon };
+const day5_0 = { id: 5.0, title: "GROSSE surprise...", text: texts.day.fiveSurprise, date: "Vendredi 6 septembre", icon: ChestIcon };
 const day5_1 = { id: 5.1, title: "GROS PARTY !!!", text: texts.day.fiveComplete, date: "Vendredi 6 septembre", icon: PotionIcon };
 
 // Get current date and compare it with 4th of September 2024 to reveal the surprise
