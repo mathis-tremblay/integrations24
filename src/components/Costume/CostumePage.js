@@ -45,27 +45,31 @@ export default function CostumePage() {
     return (
         <div>
             <LoadingSpinner loading={loading}/>
-            <SecretButton/>
             {admin ? (
                 <CostumeAdminPage />
             ) : !quizzEnd ? (
                 <QuizzPage setQuizzEnd={setQuizzEnd} />
             ) : (
-                <div className="CenterContainer">
-                    <div className="CostumeHeader">
-                        Vous êtes un <b>{costume.toUpperCase()}</b>
+                <div>
+                    <div className="CenterContainer">
+                        <div className="CostumeHeader">
+                            Vous êtes un <b>{costume.toUpperCase()}</b>
+                        </div>
+                        <div className="CostumeHeader" style={{ marginTop: 3, textAlign: "left" }}>
+                            Il est indispensable pour tout {costume} d'avoir...
+                        </div>
+                        <div className="CostumeDialog">
+                            {costume === "hobbit" && <HobbitCostume />}
+                            {costume === "nain" && <NainCostume />}
+                            {costume === "elf" && <ElfCostume />}
+                            {costume === "ent" && <EntCostume />}
+                        </div>
                     </div>
-                    <div className="CostumeHeader" style={{ marginTop: 3, textAlign: "left" }}>
-                        Il est indispensable pour tout {costume} d'avoir...
-                    </div>
-                    <div className="CostumeDialog">
-                        {costume === "hobbit" && <HobbitCostume />}
-                        {costume === "nain" && <NainCostume />}
-                        {costume === "elf" && <ElfCostume />}
-                        {costume === "ent" && <EntCostume />}
-                    </div>
+                    <SecretButton/>
                 </div>
-            )}
+                )
+            }
+
         </div>
 
     );

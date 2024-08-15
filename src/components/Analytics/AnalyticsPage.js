@@ -5,6 +5,7 @@ import {doc, getDoc} from "firebase/firestore";
 import {db} from "../firebase/firebase";
 import Divider from "@mui/material/Divider";
 import * as React from "react";
+import {getSecretFound} from "../../utils/costumes"
 
 
 export default function AnalyticsPage() {
@@ -14,6 +15,7 @@ export default function AnalyticsPage() {
     const [elfs, setElfs] = useState(0);
     const [hobbits, setHobbits] = useState(0);
     const [nains, setNains] = useState(0);
+    const [secret, setSecret] = useState(0)
     const [day1 , setDay1] = useState(0);
     const [day2, setDay2] = useState(0);
     const [day3, setDay3] = useState(0);
@@ -32,6 +34,7 @@ export default function AnalyticsPage() {
             setElfs(costumesDoc.data().elf);
             setHobbits(costumesDoc.data().hobbit);
             setNains(costumesDoc.data().nain);
+            setSecret(await getSecretFound());
             setDay1(participationDoc.data()["1"]);
             setDay2(participationDoc.data()["2"]);
             setDay3(participationDoc.data()["3"]);
@@ -49,7 +52,6 @@ export default function AnalyticsPage() {
             <div className="analyticsContainer">
                 <div className="innerContainer">
                     <p>Nombre d'<b>utilisateurs</b> : {users}</p>
-                    {/*Nb 1er annee et vieux ?*/}
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <Divider sx={{
                             backgroundColor: "white",
@@ -59,6 +61,8 @@ export default function AnalyticsPage() {
                             marginBottom: "-1%"
                         }}/>
                     </div>
+                    <br/>
+                    <p>Nombre d'utilisateurs ayant trouvé le <b>secret</b> : {secret}</p>
                     <br/>
                     <p>Nombre de chaque <b>costume</b></p>
                     <p><b>Ents</b> : {ents} </p>
