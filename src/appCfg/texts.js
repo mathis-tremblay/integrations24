@@ -76,7 +76,7 @@ export const texts = {
                 de pain, tu seras sacrifié dans la Montagne du Destin.
             </p>
             <p>
-                En plus de la tranche de pain, tu dois te présenter le premier jour des intégrations avec MINIMUM 20
+                En plus de la tranche de pain, tu dois te présenter le premier jour des intégrations avec MINIMUM 30
                 goupilles de canette. Plus tu en as, plus tu as de chances de traverser le Mordor en un morceau.
             </p>
             <p>

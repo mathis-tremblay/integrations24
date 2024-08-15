@@ -25,7 +25,7 @@ export const appConsts = {
 
     //TODO:
     infos: {
-        amountToPay: "69",
+        amountToPay: "45",
     },
 
     costumes: ["nain", "elf", "hobbit", "ent"]

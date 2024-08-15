@@ -82,7 +82,7 @@ export default function EntCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Pantalon long de couleur (110±1%)Ω  (indice : regarde les couleurs...).
+                        Pantalon long de couleur (110±1%)Ω  (indice : code de couleurs des résistances).
                     </div>
                 </ListItemText>
             </ListItem>

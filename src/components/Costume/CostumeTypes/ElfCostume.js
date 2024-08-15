@@ -70,8 +70,8 @@ export default function ElfCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une cape de couleur 5.5±0.5% MΩ (indice : regarde les couleurs...) avec le motif produit par ce
-                        script python:
+                        Une cape de couleur 5.5±0.5% MΩ (indice : code de couleurs des résistances) avec le motif
+                        produit par ce script python:
                     </div>
                 </ListItemText>
             </ListItem>

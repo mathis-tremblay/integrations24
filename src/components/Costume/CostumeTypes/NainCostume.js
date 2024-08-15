@@ -78,7 +78,7 @@ export default function NainCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une grosse ceinture de couleur (110±1%)Ω (indice : regarde les couleurs...)
+                        Une grosse ceinture de couleur (110±1%)Ω (indice : code de couleurs des résistances)
                     </div>
                 </ListItemText>
             </ListItem>

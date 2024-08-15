@@ -28,14 +28,14 @@ export default function InfoPage () {
             />
             <InfoDialog
                 title={"Informations générales"}
-                desc={"Lis sinon on t'aime un peu moins."}
+                desc={"Lis-moi sinon on t'aime un peu moins."}
                 text={texts.info.infoGenerales}
                 icon={<BlindIcon sx={{fontSize: "2.5rem"}}/>}
                 bienvenue={false}
             />
             <InfoDialog
                 title={"Informations importantes"}
-                desc={"Crois moi, ça vaut la peine de lire."}
+                desc={"On va appeller tes parents si tu me lis pas"}
                 text={texts.info.infoImportantes}
                 icon={<ReportProblemIcon sx={{fontSize: "2.5rem"}}/>}
                 bienvenue={false}
