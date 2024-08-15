@@ -20,6 +20,7 @@
     font-size: 20px;
     color: white;
     text-align: left;
+    overflow-y: auto;
 }
 .CostumeDialog::-webkit-scrollbar {
     width: 10px; /* Width of the scrollbar */
@@ -114,7 +115,6 @@
     font-size: 14px;
     margin-top: 1%;
 }
-
 
 @media (max-width: 700px) {
     .CostumeContainer {

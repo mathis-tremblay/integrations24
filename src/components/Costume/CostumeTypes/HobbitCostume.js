@@ -17,7 +17,8 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une chemise rentrée dans les pantalons de couleur 99±1% GΩ.
+                        Une chemise (elle doit être rentré dans les pantalons) de couleur (99±1%)GΩ (indice : regarde
+                        les couleurs...).
                     </div>
                 </ListItemText>
             </ListItem>
@@ -30,8 +31,8 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des pantalons ¾. La longueur entre le pantalon et le soulier doit être, en cm, de
-                        3u(t)+3/2r(t+1) à t=4.
+                        Des pantalons  ¾ : la longueur entre le pantalon et la cheville doit être de 3u(t) +3/2r(t+1) à
+                        t = 4, en cm (indice : échellon, rampe).
                     </div>
                 </ListItemText>
             </ListItem>
@@ -44,7 +45,8 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une veste pour pas avoir froid en traversant le Mordor.
+                        Une veste pour pas avoir froid en traversant le mordor. Affiche les symboles d’une résistance,
+                        d’un condensateur, d’un inducteur, et d’un transistor Mosfet PNP.
                     </div>
                 </ListItemText>
             </ListItem>
@@ -57,7 +59,7 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Des sandales avec du poil sur les pieds de 5cm.
+                        Des sandales avec du poil sur les pieds de 8cm.
                     </div>
                 </ListItemText>
             </ListItem>
@@ -83,8 +85,9 @@ export default function HobbitCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une sacoche. Elle doit contenir une tranche de pain, une lampe de poche, et l'incroyable quote en HEX:
-                        <em> Je n'en dirai pas plus, il faut quand même que ceux qui ont A+ méritent leur note!</em>
+                        Une sacoche avec à l’intérieur une tranche de pain, une lampe de poche, 30 goupilles de
+                        cannettes et l’incroyable quote : “<em>Je n’en dirai pas plus, il faut quand même que ceux qui ont
+                        A+ méritent leur note!</em>”.
                     </div>
                 </ListItemText>
             </ListItem>

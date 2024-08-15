@@ -10,6 +10,7 @@ import CostumeAdminPage from "./CostumeAdminPage";
 import QuizzPage from "./QuizzPage";
 import LoadingSpinner from "../LoadingSpinner";
 import {useMain} from "../../reactHooks/MainContext";
+import SecretButton from "./SecretButton";
 
 export default function CostumePage() {
     const main = useMain();
@@ -44,6 +45,7 @@ export default function CostumePage() {
     return (
         <div>
             <LoadingSpinner loading={loading}/>
+            <SecretButton/>
             {admin ? (
                 <CostumeAdminPage />
             ) : !quizzEnd ? (
