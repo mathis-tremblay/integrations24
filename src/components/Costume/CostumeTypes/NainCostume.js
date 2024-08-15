@@ -2,6 +2,7 @@ import HelmetIcon from "../../../images/helmet_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
 import "../CostumePageStyle.css"
+import CircuitNain from "../../../images/circuit_nain.png";
 
 
 export default function NainCostume() {
@@ -17,7 +18,8 @@ export default function NainCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une casserole comme casque. Sur le dessus, dessine en porte logique la fonction S=A∧(B∨C).
+                        Un casque de métal (casserole, papier d'aluminium, soyez créatifs). Sur le dessus, dessine en
+                        porte logique la fonction S = A∧(B∨C).
                     </div>
                 </ListItemText>
             </ListItem>
@@ -56,7 +58,27 @@ export default function NainCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une hache ou un marteau fait en canette. Le manche doit être de longueur 1x10^12 picomètre.
+                        Une hache ou un marteau fait en canettes. Le manche en bois doit être de longueur (en cm)
+                        égale au courant (en mA) qui passe dans R3 quand t -> infini (aucunes conditions initiales):
+                        <br/>
+
+                    </div>
+                </ListItemText>
+            </ListItem>
+            <img src={CircuitNain}
+                            alt={""}
+                            style={{width: '50vw', height: '30vw', marginLeft: "5vw"}}
+            />
+            <ListItem disableGutters>
+                <ListItemIcon>
+                    <img src={HelmetIcon}
+                         alt={""}
+                         style={{width: '40px', height: '40px'}}
+                    />
+                </ListItemIcon>
+                <ListItemText>
+                    <div className="CostumeDialog">
+                        Une grosse ceinture de couleur (110±1%)Ω (indice : regarde les couleurs...)
                     </div>
                 </ListItemText>
             </ListItem>
@@ -69,7 +91,7 @@ export default function NainCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une grosse ceinture de couleur 110±1% Ω
+                        Une paire de shorts trop courts
                     </div>
                 </ListItemText>
             </ListItem>
@@ -82,20 +104,7 @@ export default function NainCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une paire de short trop courte.
-                    </div>
-                </ListItemText>
-            </ListItem>
-            <ListItem disableGutters>
-                <ListItemIcon>
-                    <img src={HelmetIcon}
-                         alt={""}
-                         style={{width: '40px', height: '40px'}}
-                    />
-                </ListItemIcon>
-                <ListItemText>
-                    <div className="CostumeDialog">
-                        Des grosses bottes.
+                        Une paire de bottes trop grandes
                     </div>
                 </ListItemText>
             </ListItem>

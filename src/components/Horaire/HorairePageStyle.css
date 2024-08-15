@@ -48,6 +48,30 @@
     background-color: rgba(85,136,38,0.05);
 }
 
+.MuiDialogContent-root {
+    overflow-y: auto;
+}
+
+.MuiDialogContent-root::-webkit-scrollbar {
+    width: 10px;
+}
+
+.MuiDialogContent-root::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.3); /* Background color of the track */
+    border-radius: 20px; /* To make it rounded */
+}
+
+.MuiDialogContent-root::-webkit-scrollbar-thumb {
+    background: #e4e4e4; /* Background color of the scrollbar itself */
+    border-radius: 20px; /* To make it rounded */
+    transition: background 0.3s;
+}
+
+.MuiDialogContent-root::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5; /* Background color of the scrollbar on hover */
+    transition: background 0.15s;
+}
+
 @media (max-width: 700px) {
     .grid {
         padding: 0;

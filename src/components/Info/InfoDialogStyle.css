@@ -59,6 +59,46 @@
     background-color: rgba(85,136,38,0.05);
 }
 
+.MuiDialog-paper {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.scrollbar-style-1::-webkit-scrollbar {
+    width: 10px;
+}
+.scrollbar-style-1::-webkit-scrollbar-track {
+    background: rgba(100, 100, 100, 0);
+    border-radius: 20px;
+}
+.scrollbar-style-1::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.scrollbar-style-1::-webkit-scrollbar-thumb:hover {
+    background: #474747;
+    transition: background 0.15s;
+}
+
+.scrollbar-style-2::-webkit-scrollbar {
+    width: 10px;
+}
+.scrollbar-style-2::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+.scrollbar-style-2::-webkit-scrollbar-thumb {
+    background: #e4e4e4;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.scrollbar-style-2::-webkit-scrollbar-thumb:hover {
+    background: #bcbcbc;
+    transition: background 0.15s;
+}
+
+
 @media(max-width: 700px) {
     .Header {
         font-size: 16px; /* for medium screens */

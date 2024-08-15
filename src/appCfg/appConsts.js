@@ -23,6 +23,7 @@ export const appConsts = {
         analytics: 'Analyse'
     },
 
+    //TODO:
     infos: {
         amountToPay: "69",
     },

@@ -2,6 +2,7 @@ import BowIcon from "../../../images/bow_icon.png"
 import List from "@mui/material/List";
 import {ListItem, ListItemIcon, ListItemText} from "@mui/material";
 import "../CostumePageStyle.css"
+import ScriptElf from "../../../images/script_elf.png";
 
 
 export default function ElfCostume() {
@@ -56,7 +57,7 @@ export default function ElfCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Un collier magique fait avec 30 goupilles de canette minimum.
+                        Un collier magique fait avec 30 goupilles de canettes minimum.
                     </div>
                 </ListItemText>
             </ListItem>
@@ -69,10 +70,15 @@ export default function ElfCostume() {
                 </ListItemIcon>
                 <ListItemText>
                     <div className="CostumeDialog">
-                        Une cape de couleur 5.5±0.5% MΩ avec <em>GELGIF</em> écrit en hexadécimal dessus.
+                        Une cape de couleur 5.5±0.5% MΩ (indice : regarde les couleurs...) avec le motif produit par ce
+                        script python:
                     </div>
                 </ListItemText>
             </ListItem>
+            <img src={ScriptElf}
+                 alt={""}
+                 style={{width: '50vw', height: '20vw', marginLeft: "5vw"}}
+            />
             <ListItem disableGutters>
                 <ListItemIcon>
                     <img src={BowIcon}
