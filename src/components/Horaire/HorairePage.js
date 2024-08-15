@@ -3,7 +3,7 @@ import HoraireDialog from "./HoraireDialog";
 import ChestIcon from "../../images/chest_icon.png";
 import PotionIcon from "../../images/potion_icon.png";
 import HelmetIcon from "../../images/helmet_icon.png";
-import BookIcon from "../../images/book_icon.png";
+import HammerIcon from "../../images/hammer_icon.png";
 import DaggersIcon from "../../images/daggers_icon.png";
 import CrownIcon from "../../images/crown_icon.png"
 import { isParticipating, setParticipating } from "../../utils/user";
@@ -13,7 +13,7 @@ import {texts} from "../../appCfg/texts";
 const days = [
     { id: 1, title: "Activités et Ptite Gre", text: texts.day.one, date: "Lundi 2 septembre", icon: HelmetIcon },
     { id: 2, title: "Rally appart", text: texts.day.two, date: "Mardi 3 septembre", icon: DaggersIcon },
-    { id: 3, title: "Ptite soirée relax", text: texts.day.three , date: "Mercredi 4 septembre", icon: BookIcon },
+    { id: 3, title: "Jeux malades", text: texts.day.three , date: "Mercredi 4 septembre", icon: HammerIcon },
     { id: 4, title: "Festin du roi", text: texts.day.four, date: "Jeudi 5 septembre", icon: CrownIcon },
 ];
 

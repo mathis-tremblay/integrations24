@@ -146,39 +146,39 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            <b>8h15 - Accueil 🚪</b>
+            <b style={{textAlign: "center"}}>8h15 - Accueil 🚪</b>
             <p style={{textAlign: "center"}}>
                 Arrivez déguisés au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
                 Oublie pas ta LPU, ta tranche de pain, et apporte un contenant opaque.
                 <br/>"Some days are arder than oders, but those are the one that count the most."  - George St-Pierre
             </p>
-            <b>8h30 - Visite du compté 👀</b>
+            <b style={{textAlign: "center"}}>8h30 - Visite du compté 👀</b>
             <p style={{textAlign: "center"}}>
                 On vous fait visiter le compté (l’uni).
             </p>
-            <b>9h00 - L’aventure commence 🌋</b>
+            <b style={{textAlign: "center"}}>9h00 - L’aventure commence 🌋</b>
             <p style={{textAlign: "center"}}>
                 Vous commencez la grande épopée vers le Mordor. En passant par la mine de Moria et la cité elfique de
                 Rivendell, la prochaine destination est le parc des intégrations. Si tu n’as pas d’alcool et que tu en
                 veux pour le reste de l’aventure, on passe en chercher.
                 <br/>Attention aux Nazguls!
             </p>
-            <b>10h00 - Activités au parc 🌳</b>
+            <b style={{textAlign: "center"}}>10h00 - Activités au parc 🌳</b>
             <p style={{textAlign: "center"}}>
                 Il faut tisser des liens forts entre membres de la communauté de l’anneau! Tu vas apprendre à connaître
                 tes confrères. Attention, ça risque d’être salissant, donc apporte des vêtements de rechange.
             </p>
-            <b>12h00 - Pizz et chandails 🍕</b>
+            <b style={{textAlign: "center"}}>12h00 - Pizz et chandails 🍕</b>
             <p style={{textAlign: "center"}}>
                 Ouf, bouger autant ça creuse l’appétit! On te nourrit pour combler ça avec de la bonne pizza. Il y a des
                 options végé aussi, aucun stress.
             </p>
-            <b>14h00 - Débrouille-toi 🤷</b>
+            <b style={{textAlign: "center"}}>14h00 - Débrouille-toi 🤷</b>
             <p style={{textAlign: "center"}}>
                 Tu peux faire ce que tu veux. Tu devrais probablement te reposer avant la soirée, mais c’est toi qui
                 décides! Nous on va chiller au RÉGIÉ, si jamais.
             </p>
-            <b>20h00 – 23h00 : Soirée Ptite-Gre!!! ‍🐸</b>
+            <b style={{textAlign: "center"}}>20h00 – 23h00 : Soirée Ptite-Gre!!! ‍🐸</b>
             <p style={{textAlign: "center"}}>
                 Attache ton capuchon, ça part! Rejoins-nous au bar la P’tite Grenouille avec ton chandail d’intégré.
                 Bar, DJ, beer-pong et options sans-alcool, y’en a pour tout le monde. Apporte une carte d’identité.
@@ -192,12 +192,12 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            <b>17h00 - On va t'occuper ⚽️</b>
+            <b style={{textAlign: "center"}}>17h00 - On va t'occuper ⚽️</b>
             <p style={{textAlign: "center"}}>
                 On se retrouve sur le Grand Axe pour souper (amène un lunch) et jouer à des jeux genre spikeball et
                 frisbee.
             </p>
-            <b>19h00 - Rallye d'apparts 🥴</b>
+            <b style={{textAlign: "center"}}>19h00 - Rallye d'apparts 🥴</b>
             <p style={{textAlign: "center"}}>
                 "It's not about being the best, but about being better than you were
                 yesterday" - George St-Pierre
@@ -205,11 +205,11 @@ export const texts = {
             <p style={{textAlign: "center"}}>
                 Bref, on part faire la tournée de quelques apparts et s'amuser comme des p'tits fous.
             </p>
-            <b>23h00 - After pour les plus crinqués 🕺</b>
+            <b style={{textAlign: "center"}}>23h00 - After pour les plus crinqués 🕺</b>
             <p style={{textAlign: "center"}}>
                 Si t'as encore de l'énergie, suis-nous.
             </p>
-            <b>??h?? - Chu chaud, j'veux une poutine 🍟</b>
+            <b style={{textAlign: "center"}}>??h?? - Chu chaud, j'veux une poutine 🍟</b>
             <p style={{textAlign: "center"}}>
                 Pour ceux qui veulent finir ça en beauté --> au Salvatore!
             </p>
@@ -220,12 +220,12 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            <b>17H00 – Jeux malade 🕹️</b>
+            <b style={{textAlign: "center"}}>17H00 – Jeux malades 🕹️</b>
             <p style={{textAlign: "center"}}>
                 On se retrouve au FestiPub (dans la cafeteria du Pavillon Adrien-Pouliot) pour jouer à des jeux comme
                 des débats oratoires et du génie en herbe. Enweille arsoud si tu veux avoir du funnn!!
             </p>
-            <b>19H30 – SMASHHHHHH 🎮</b>
+            <b style={{textAlign: "center"}}>19H30 – SMASHHHHHH 🎮</b>
             <p style={{textAlign: "center"}}>
                 C’est maintenant l’heure de montrer ton adversité avec un BIGGGG tournoi de SMASH !!!
                 P.S. Si du smash est pas dans tes cordes ou si tu t’es fait éclater par bowser, il y aura aussi du
@@ -238,17 +238,17 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-        <b>18h00 - Souper chic à La Chope Gobeline 🎩</b>
+            <b style={{textAlign: "center"}}>18h00 - Souper chic à La Chope Gobeline 🎩</b>
             <p style={{textAlign: "center"}}>
                 Rejoins nous à La Chope Gobeline pour un souper chic. C’est l’occasion de te vêtir d’un beau kit!
                 (966 Boulevard René-Lévesque Ouest, Québec)
             </p>
-            <b>19h30 - Assignation des parrains</b>
+            <b style={{textAlign: "center"}}>19h30 - Assignation des parrains</b>
             <p style={{textAlign: "center"}}>
                 Tu vas enfin connaître l’identité de ton parrain/marrainne! Cette personne sera ton guide/support
                 tout le long de ta première année.
             </p>
-            <b>21h00 - Activités à l’uni 🎮</b>
+            <b style={{textAlign: "center"}}>21h00 - Activités à l’uni 🎮</b>
             <p style={{textAlign: "center"}}>
                 On te prépare pleins d’activités! Au menu: wikiwars, compétition de smash, génie en herbe et plus encore.
                 Ne rate pas ça!
@@ -260,7 +260,7 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            <b>17h30 - ❓❓❓</b>
+            <b style={{textAlign: "center"}}>17h30 - ❓❓❓</b>
             <p style={{textAlign: "center"}}>
                 Rejoins-nous dans le parking en face du pavillon Desjardins... Crois nous, ça vaut la peine.
             </p>
@@ -271,25 +271,25 @@ export const texts = {
             justifyContent: "center",
             alignItems: "center",
         }}>
-            <b>17h30 - Départ vers le chalet 🚌</b>
+            <b style={{textAlign: "center"}}>17h30 - Départ vers le chalet 🚌</b>
             <p style={{textAlign: "center"}}>
                 Rejoins-nous dans le parking en face du pavillon Desjardins. On s'en va en chalet faire le party!! La
                 boisson est incluse, donc manque pas ça!
             </p>
-            <b>19h00 - Souper roteux 🌭</b>
+            <b style={{textAlign: "center"}}>19h00 - Souper roteux 🌭</b>
             <p style={{textAlign: "center"}}>
                 On vous sert des bons hot-dogs pour souper. On sait que tu aimes boire, mais c'est important de manger
                 aussi.
             </p>
-            <b>20h00 - PARTYYYYYY 🍻</b>
+            <b style={{textAlign: "center"}}>20h00 - PARTYYYYYY 🍻</b>
             <p style={{textAlign: "center"}}>
                 Le party commence! On a hâte de te voir sur le dance floor ou bien au beer pong.
             </p>
-            <b>00h00 - Premier départ 👋</b>
+            <b style={{textAlign: "center"}}>00h00 - Premier départ 👋</b>
             <p style={{textAlign: "center"}}>
                 Premier départ d'autobus. Si tu es tanné ou tu ne tiens plus debout, c'est le temps de partir.
             </p>
-            <b>01h00 - Dernier départ 😴</b>
+            <b style={{textAlign: "center"}}>01h00 - Dernier départ 😴</b>
             <p style={{textAlign: "center"}}>
                 Dernier départ d'autobus. On est tous fatigués et c'est le temps de partir.
             </p>
