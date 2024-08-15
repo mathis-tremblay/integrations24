@@ -4,6 +4,7 @@ import Divider from "@mui/material/Divider";
 import * as React from "react";
 import {styled} from "@mui/material/styles";
 import "../Info/InfoDialogStyle.css"
+import {addSecretFound} from "../../utils/costumes";
 
 const OkButton = styled(Button)({
     backgroundColor: "white",
@@ -20,8 +21,9 @@ const OkButton = styled(Button)({
 export default function SecretButton() {
     const [open, setOpen] = useState(false);
 
-    const handleOpen = () => {
+    const handleOpen = async () => {
         setOpen(true);
+        await addSecretFound();
     }
 
     const handleClose = () => {
@@ -59,7 +61,7 @@ export default function SecretButton() {
                     </OkButton>
                 </DialogActions>
             </Dialog>
-            <Button sx={{position: "absolute", bottom: 0, left: "13%", fontSize: {md: 15, xs: 10}, p: 0}}
+            <Button sx={{fontSize: {md: 15, xs: 10}, p: 0, marginTop: "2vh", marginRight: "75vw"}}
                 onClick={handleOpen}
                     open={open}
             >

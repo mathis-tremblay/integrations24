@@ -1,7 +1,29 @@
 import {db} from "../components/firebase/firebase";
-import {doc, getDoc} from "firebase/firestore";
+import {arrayUnion, doc, getDoc, updateDoc} from "firebase/firestore";
 import {auth} from '../components/firebase/firebase';
 
+export async function addSecretFound() {
+    const user = auth.currentUser;
+    if (!user) {
+        throw new Error("User is not authenticated");
+    }
+
+    const analyticsDoc = doc(db, "Analytics", "Costumes")
+
+    await updateDoc(analyticsDoc, {secretFound: arrayUnion(user.uid)})
+}
+
+export async function getSecretFound() {
+    const userDoc = doc(db, "Analytics", "Costumes");
+    const docSnap = await getDoc(userDoc);
+
+    if (docSnap.exists()) {
+        const data = docSnap.data();
+        return data.secretFound.length;
+    } else {
+        throw new Error("No such document!");
+    }
+}
 
 async function countCostumes() {
     const costumesDoc = doc(db, "Analytics", "Costumes");
