@@ -61,7 +61,7 @@ export default function SecretButton() {
                     </OkButton>
                 </DialogActions>
             </Dialog>
-            <Button sx={{fontSize: {md: 20, xs: 15}, p: 0, marginTop: "2vh", marginRight: "75vw"}}
+            <Button sx={{fontSize: {md: 20, xs: 15}, p: 0, marginTop: "1.0vh", marginRight: "73vw"}}
                 onClick={handleOpen}
                     open={open}
             >
