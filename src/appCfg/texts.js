@@ -247,10 +247,10 @@ export const texts = {
                 Tu vas enfin connaître l’identité de ton parrain/marrainne! Cette personne sera ton guide/support
                 tout le long de ta première année.
             </p>
-            <b style={{textAlign: "center"}}>21h00 - Marshall 🍻</b>
+            <b style={{textAlign: "center"}}>21h00 - Marshallllllllll 🍻</b>
             <p style={{textAlign: "center"}}>
-                On va finir la soirée au bar Le Marshall pour ceux qui ont encore du jus. En bref, du bowling, du
-                billard, et gros de fun!
+                On s'en va fêter comme des fous au Marshall. En bref, du bowling, du billard, et gros de fun! Ne rate
+                pas ça!
             </p>
         </div>,
         fiveSurprise: <div style={{
