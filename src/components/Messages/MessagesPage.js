@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import "./MessagesPageStyle.css"
 import IconButton from "@mui/material/IconButton";
 import SendIcon from '@mui/icons-material/Send';
-import {ReadMessages, WriteMessage} from "../../utils/messages";
+import {readMessages, writeMessage} from "../../utils/messages";
 import MessageObject from "./MessageObject";
 
 
@@ -17,9 +17,10 @@ export default function MessagesPage () {
     // Create a reference to the last message
     const messagesEndRef = useRef(null);
 
+    // Fetching data here vs in MainContext so that it reloads when messages are sent
     useEffect(() => {
         async function getMessages() {
-            const messages = await ReadMessages();
+            const messages = await readMessages();
             setMessages(messages);
             setLoading(false);
         }
@@ -36,7 +37,7 @@ export default function MessagesPage () {
     };
 
     const handleSendMessage = async () => {
-        if (inputText !== "") await WriteMessage(inputText);
+        if (inputText !== "") await writeMessage(inputText);
         setInputText("");
         setSentMessage(!sentMessage);
         // Scroll to the last message when a new message is sent

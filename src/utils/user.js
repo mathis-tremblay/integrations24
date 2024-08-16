@@ -80,8 +80,8 @@ export async function setQuestionsAnswered(questionsAnswered) {
     await updateDoc(userDoc, { questionsAnswered: questionsAnswered });
 }
 
-// Returns a boolean that tells if the user is participating on the day from the argument
-export async function isParticipating(day){
+// Returns an array of bools that tells which days the user is participating based on the index
+export async function isParticipating(){
     const user = auth.currentUser;
     if (!user) {
         throw new Error("User is not authenticated");
@@ -91,7 +91,16 @@ export async function isParticipating(day){
 
     if (docSnap.exists()) {
         const data = docSnap.data();
-        return data.participatingDays.includes(day);
+        const participatingDays = data.participatingDays;
+
+        const participation = Array(5).fill(false);
+        participatingDays.forEach(day => {
+            if (day >= 1 && day <= 5) { // Ensure day is within the range 1 to 5
+                participation[day - 1] = true;
+            }
+        });
+        return participation
+
     } else {
         throw new Error("No such document!");
     }

@@ -4,7 +4,7 @@ import {arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc} from "f
 
 // Writes the answer to the User's collection.
 // [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, answer: true}, {...}]
-export async function WriteAnswer(text, userId) {
+export async function writeAnswer(text, userId) {
     const userDoc = doc(db, "Users", userId);
 
     let currentDate = new Date();
@@ -18,7 +18,7 @@ export async function WriteAnswer(text, userId) {
 // Adds the user to the Convos collection
 // Also writes the message in the User's collection.
 // [{text: "blablabla", date: AAAA-MM-JJ_HH-MM-SS, answer: flase}, {...}]
-export async function WriteMessage(text) {
+export async function writeMessage(text) {
 
     const user = auth.currentUser;
     if (!user) {
@@ -40,7 +40,7 @@ export async function WriteMessage(text) {
 // Gets the message from User's collection using the userId argument
 // If the function is called with no argument, it takes the current user's messages
 // Returns an array of message sorted from the oldest date to the most recent. [old, ..., recent]
-export async function ReadMessages(userId) {
+export async function readMessages(userId) {
 
     if (!userId) {
         const user = auth.currentUser;
@@ -69,7 +69,7 @@ export async function ReadMessages(userId) {
 }
 
 // Returns an array of the ids of all the users who sent messages
-export async function GetUsersWhoSentMessages() {
+export async function getUsersWhoSentMessages() {
     const convosCollection = collection(db, "Convos");
     const querySnapshot = await getDocs(convosCollection);
     const users = [];

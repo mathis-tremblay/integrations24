@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import "./MessagesPageStyle.css"
 import IconButton from "@mui/material/IconButton";
 import SendIcon from '@mui/icons-material/Send';
-import {GetUsersWhoSentMessages, ReadMessages, WriteAnswer} from "../../utils/messages";
+import {getUsersWhoSentMessages, readMessages, writeAnswer} from "../../utils/messages";
 import MessageObject from "./MessageObject";
 import {styled} from "@mui/material/styles";
 
@@ -94,7 +94,7 @@ export default function MessagesAdminPage () {
 
     useEffect(() => {
         async function getUserIds() {
-            const ids = await GetUsersWhoSentMessages();
+            const ids = await getUsersWhoSentMessages();
             setUserIds(ids);
         }
         getUserIds().then();
@@ -102,7 +102,7 @@ export default function MessagesAdminPage () {
 
     useEffect(() => {
         async function getMessages() {
-            const messages = await ReadMessages(selectedUser);
+            const messages = await readMessages(selectedUser);
             messages.forEach(message => {message.answer = !message.answer});
             setMessages(messages);
             setLoading(false);
@@ -124,7 +124,7 @@ export default function MessagesAdminPage () {
     };
 
     const handleSendMessage = async () => {
-        if (inputText) await WriteAnswer(inputText, selectedUser);
+        if (inputText) await writeAnswer(inputText, selectedUser);
         setInputText("");
         setSentMessage(!sentMessage);
         // Scroll to the last message when a new message is sent

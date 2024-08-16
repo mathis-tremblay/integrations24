@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import HoraireDialog from "./HoraireDialog";
 import ChestIcon from "../../images/chest_icon.png";
 import PotionIcon from "../../images/potion_icon.png";
@@ -6,9 +5,10 @@ import HelmetIcon from "../../images/helmet_icon.png";
 import HammerIcon from "../../images/hammer_icon.png";
 import DaggersIcon from "../../images/daggers_icon.png";
 import CrownIcon from "../../images/crown_icon.png"
-import { isParticipating, setParticipating } from "../../utils/user";
+import { setParticipating } from "../../utils/user";
 import "./HorairePageStyle.css";
 import {texts} from "../../appCfg/texts";
+import {useMain} from "../../reactHooks/MainContext";
 
 const days = [
     { id: 1, title: "Activités et Ptite Gre", text: texts.day.one, date: "Lundi 2 septembre", icon: HelmetIcon },
@@ -18,8 +18,8 @@ const days = [
 ];
 
 // Day 5 events
-const day5_0 = { id: 5.0, title: "GROSSE surprise...", text: texts.day.fiveSurprise, date: "Vendredi 6 septembre", icon: ChestIcon };
-const day5_1 = { id: 5.1, title: "GROS PARTY !!!", text: texts.day.fiveComplete, date: "Vendredi 6 septembre", icon: PotionIcon };
+const day5_0 = { id: 5, title: "GROSSE surprise...", text: texts.day.fiveSurprise, date: "Vendredi 6 septembre", icon: ChestIcon };
+const day5_1 = { id: 5, title: "GROS PARTY !!!", text: texts.day.fiveComplete, date: "Vendredi 6 septembre", icon: PotionIcon };
 
 // Get current date and compare it with 4th of September 2024 to reveal the surprise
 const currentDate = new Date();
@@ -32,16 +32,10 @@ if (currentDate >= limitDate) {
 }
 
 export default function HorairePage() {
-    const [participation, setParticipation] = useState(days.map(() => false));
+    const main = useMain();
 
-    useEffect(() => {
-        async function fetchParticipatingDays() {
-            const promises = days.map(day => isParticipating(day.id));
-            const results = await Promise.all(promises);
-            setParticipation(results);
-        }
-        fetchParticipatingDays().then();
-    }, []);
+    const participation = main.participation;
+    const setParticipation = main.setParticipation;
 
     async function handleParticipatingChange(newParticipationStatus, dayId) {
         const updatedParticipation = [...participation];
