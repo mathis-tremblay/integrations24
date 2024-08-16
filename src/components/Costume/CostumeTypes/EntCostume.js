@@ -95,7 +95,7 @@ export default function EntCostume() {
                 <ListItemText>
                     <div className="CostumeDialog">
                         Des brindilles collées sur votre chandail. Il doit y en avoir un nombre de 3u(t) + 3/2r(t+1) à
-                        t=3.
+                        t=3 (indice : échellon, rampe).
                     </div>
                 </ListItemText>
             </ListItem>
