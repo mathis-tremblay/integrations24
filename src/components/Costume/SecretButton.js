@@ -37,7 +37,7 @@ export default function SecretButton() {
                 onClose={handleClose}
                 maxWidth="lg"
             >
-                <DialogTitle align="center" style={{color: "rgb(43,69,19)",}}>TU AS ÉTÉ CHOISIS 🍗</DialogTitle>
+                <DialogTitle align="center" style={{color: "rgb(43,69,19)",}}>TU AS ÉTÉ CHOISI 🍗</DialogTitle>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <Divider sx={{
                         backgroundColor: "rgb(43,69,19)",
@@ -61,7 +61,7 @@ export default function SecretButton() {
                     </OkButton>
                 </DialogActions>
             </Dialog>
-            <Button sx={{fontSize: {md: 15, xs: 10}, p: 0, marginTop: "2vh", marginRight: "75vw"}}
+            <Button sx={{fontSize: {md: 20, xs: 15}, p: 0, marginTop: "2vh", marginRight: "75vw"}}
                 onClick={handleOpen}
                     open={open}
             >

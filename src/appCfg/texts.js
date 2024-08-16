@@ -138,7 +138,6 @@ export const texts = {
         </p>
     },
 
-    //TODO:
     day: {
         one: <div style={{
             display: "flex",
@@ -248,10 +247,10 @@ export const texts = {
                 Tu vas enfin connaître l’identité de ton parrain/marrainne! Cette personne sera ton guide/support
                 tout le long de ta première année.
             </p>
-            <b style={{textAlign: "center"}}>21h00 - Activités à l’uni 🎮</b>
+            <b style={{textAlign: "center"}}>21h00 - Marshall 🍻</b>
             <p style={{textAlign: "center"}}>
-                On te prépare pleins d’activités! Au menu: wikiwars, compétition de smash, génie en herbe et plus encore.
-                Ne rate pas ça!
+                On va finir la soirée au bar Le Marshall pour ceux qui ont encore du jus. En bref, du bowling, du
+                billard, et gros de fun!
             </p>
         </div>,
         fiveSurprise: <div style={{

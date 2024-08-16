@@ -23,9 +23,8 @@ export const appConsts = {
         analytics: 'Analyse'
     },
 
-    //TODO:
     infos: {
-        amountToPay: "45",
+        amountToPay: "50",
     },
 
     costumes: ["nain", "elf", "hobbit", "ent"]
