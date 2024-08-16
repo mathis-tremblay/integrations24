@@ -52,8 +52,9 @@ export const texts = {
                 Pour t'inscrire aux activités, coche la case <em>Je participe</em> dans l'onglet Horaire.
             </p>
             <p>
-                Cependant, pour participer à ces activités, tu dois payer ta contribution
-                de <b>{appConsts.infos.amountToPay}$</b> à <em>tresorier@gelgif.com</em> (en minuscule).
+                Cependant, pour participer à ces activités, tu dois payer ta contribution de
+                <b>{appConsts.infos.amountToPay}$</b> avec un virement Interac à <em>tresorier@gelgif.com</em>
+                (en minuscule).
             </p>
             <p>
                 <b>Question :</b> <span style={{fontWeight: "normal"}}>integration</span> <br/>
@@ -107,10 +108,9 @@ export const texts = {
         frais: <p>
             <p>Les frais d'intégration sont de <b>{appConsts.infos.amountToPay}$</b>. Ils couvrent la grande majorité
                 des coûts pour les activités de la semaine.</p>
-            <p><em>Pas de paiement = Pas d'intégration !</em> Donc assure-toi de payer ta contribution
-                de <b>{appConsts.infos.amountToPay}$</b> à <em>tresorier@gelgif.com</em> (en minuscule) avant le début des
-                intégrations,
-                soit lundi le 2 septembre.</p>
+            <p><em>Pas de paiement = Pas d'intégration !</em> Donc assure-toi de payer ta contribution de
+                <b>{appConsts.infos.amountToPay}$</b> avec un virement Interac à <em>tresorier@gelgif.com</em>
+                (en minuscule) avant le début des intégrations, soit lundi le 2 septembre.</p>
             <b>Question : </b> <span style={{fontWeight: "normal"}}>integration</span> <br/>
             <b>Réponse : </b> <span style={{fontWeight: "normal"}}>gelgif</span> <br/>
             <br/>
