@@ -1,8 +1,8 @@
 .messagesContainer {
     background-color: rgba(85, 136, 38, 0.70);
-    margin: 4vh 10% 0 10%;
+    margin: 4svh 10% 0 10%;
     display: flex;
-    height: 90vh;
+    height: 90svh;
     width: 70vw;
     border-radius: 20px;
     flex-direction: column;

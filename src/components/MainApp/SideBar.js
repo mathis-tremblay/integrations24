@@ -22,7 +22,7 @@ import {auth} from "../firebase/firebase";
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
-        height: '100vh',
+        height: '100svh',
         '& .MuiDrawer-paper': {
             color: "white",
             backgroundColor: 'rgba(62,99,27,0.95)',
