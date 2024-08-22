@@ -40,7 +40,7 @@ export default function InfoDialog({ title, desc, text, icon, bienvenue }) {
                         backgroundColor: 'rgba(85,136,38,0.85)',
                         color: 'white',
                         textTransform: 'none',
-                        margin: "4svh",
+                        margin: "3.6svh",
                         minWidth: "275px",
                     }}
             >
