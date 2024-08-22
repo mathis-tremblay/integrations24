@@ -45,7 +45,7 @@ export default function SecretButton() {
                         width: "94%",
                     }}/>
                 </div>
-                <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",maxHeight: '72vh', overflowY: "auto"}}
+                <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",maxHeight: '72svh', overflowY: "auto"}}
                                className="scrollbar-style-2">
                     <DialogContentText style={{color: "rgb(43,69,19)"}}>
                         Bravo, cher GelGifois. Tu as retrouvé ma cuisse de poulet que je cherchais ! Pourrais-tu me la
@@ -61,7 +61,7 @@ export default function SecretButton() {
                     </OkButton>
                 </DialogActions>
             </Dialog>
-            <Button sx={{fontSize: {md: 20, xs: 15}, p: 0, marginTop: "1.0vh", marginRight: "73vw"}}
+            <Button sx={{fontSize: {md: 20, xs: 15}, p: 0, marginTop: "1.0svh", marginRight: "73svw"}}
                 onClick={handleOpen}
                     open={open}
             >

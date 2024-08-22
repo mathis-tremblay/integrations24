@@ -40,7 +40,7 @@ export default function InfoDialog({ title, desc, text, icon, bienvenue }) {
                         backgroundColor: 'rgba(85,136,38,0.85)',
                         color: 'white',
                         textTransform: 'none',
-                        margin: "4vh",
+                        margin: "4svh",
                         minWidth: "275px",
                     }}
             >
@@ -61,7 +61,7 @@ export default function InfoDialog({ title, desc, text, icon, bienvenue }) {
                         scroll={"body"}
                     >
                         <DialogContent
-                            style={{maxHeight: '80vh', overflowY: "auto", backgroundColor: "rgb(0,0,0)", padding: 0}}
+                            style={{maxHeight: '80svh', overflowY: "auto", backgroundColor: "rgb(0,0,0)", padding: 0}}
                             className="scrollbar-style-1"
                         >
                                 <img src={Bienvenue}
@@ -93,7 +93,7 @@ export default function InfoDialog({ title, desc, text, icon, bienvenue }) {
                                 width: "94%",
                             }}/>
                         </div>
-                        <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",maxHeight: '72vh', overflowY: "auto"}} className="scrollbar-style-2">
+                        <DialogContent style={{paddingLeft: "3%", paddingRight: "3%",maxHeight: '72svh', overflowY: "auto"}} className="scrollbar-style-2">
                             <DialogContentText style={{color: "rgb(43,69,19)"}}>
                                 {text}
                             </DialogContentText>

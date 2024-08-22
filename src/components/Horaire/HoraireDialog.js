@@ -56,7 +56,7 @@ export default function HoraireDialog({ title, date, text, icon, participating, 
                         backgroundColor: 'rgba(85,136,38,0.85)',
                         color: 'white',
                         textTransform: 'none',
-                        margin: "3vh"
+                        margin: "3svh"
                     }}
             >
                 <div className="grid">
@@ -74,7 +74,7 @@ export default function HoraireDialog({ title, date, text, icon, participating, 
                 style={{
                     '& .MuiDialog-paper': {
                         width: '70%',
-                        maxHeight: '80vh',
+                        maxHeight: '80svh',
                     }
                 }}
             >

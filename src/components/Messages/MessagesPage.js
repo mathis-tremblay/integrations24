@@ -82,7 +82,7 @@ export default function MessagesPage () {
                         color: "white",
                         border: "solid 2px #ffffff",
                         position: "relative",
-                        marginTop: "1vh",
+                        marginTop: "1svh",
                         maxHeight: "40%",
                     }}
                 >
