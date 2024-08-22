@@ -64,7 +64,8 @@ export const texts = {
             <p>
                 Lors des intégrations, sois assuré que tu as le droit de refuser tout ce qui te semble inacceptable.
                 L'objectif n'est pas de rabaisser personne, mais bien d'apprendre à se connaître et à apprivoiser ton
-                environnement pour les 4 (et plus) prochaines années. De plus, tous les membres du comité ont préalablement
+                environnement pour les 4 (et plus) prochaines années. De plus, tous les membres du comité ont
+                préalablement
                 suivi la formation sur la prévention des violences de nature sexuelle dans des activités sociales et la
                 formation sur la consommation d’alcool lors d’activités à l’Université Laval. Ton bien-être nous tient à
                 coeur et nous souhaitons que les activités d’intégration restent agréables et amusantes !
@@ -79,6 +80,9 @@ export const texts = {
             <p>
                 En plus de la tranche de pain, tu dois te présenter le premier jour des intégrations avec MINIMUM 30
                 goupilles de canette. Plus tu en as, plus tu as de chances de traverser le Mordor en un morceau.
+            </p>
+            <p>
+                Apporte avec toi un contenant opaque pour transporter de la potion.
             </p>
             <p>
                 Finalement, va chercher ta LPU (laissez-passer universitaire). C'est important pour suivre le groupe
@@ -101,12 +105,12 @@ export const texts = {
             <p>Pour participer aux activités, coche la case <em>Je participe</em> dans l'onglet Horaire pour chaque
                 activité que tu souhaites rejoindre. Par contre, pour participer, il faut <b>payer</b> !</p>
             <p>Tu peux amener tes consommations, mais AUCUN contenant en verre n'est permis.</p>
-            <p>N'oublie pas ta <b>LPU</b>, ta <b>tranche de pain</b> et tes <b>goupilles</b> !</p>
+            <p>N'oublie pas ta <b>LPU</b>, ta <b>tranche de pain</b>, ton contenant opaque et tes <b>goupilles</b> !</p>
             <b>Le comité intégrateur 2024</b> <br/>
             <b>GelGif</b>
         </p>,
         frais: <p>
-            <p>Les frais d'intégration sont de <b>{appConsts.infos.amountToPay}$</b>. Ils couvrent la grande majorité
+        <p>Les frais d'intégration sont de <b>{appConsts.infos.amountToPay}$</b>. Ils couvrent la grande majorité
                 des coûts pour les activités de la semaine.</p>
             <p><em>Pas de paiement = Pas d'intégration !</em> Donc assure-toi de payer ta contribution de
                 <b>{appConsts.infos.amountToPay}$</b> avec un virement Interac à <em>tresorier@gelgif.com</em>
@@ -148,7 +152,7 @@ export const texts = {
             <b style={{textAlign: "center"}}>8h15 - Accueil 🚪</b>
             <p style={{textAlign: "center"}}>
                 Arrivez déguisés au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
-                Oublie pas ta LPU, ta tranche de pain, et apporte un contenant opaque.
+                Oublie pas ta LPU, ta tranche de pain, tes goupilles, et apporte un contenant opaque.
                 <br/>"Some days are arder than oders, but those are the one that count the most."  - George St-Pierre
             </p>
             <b style={{textAlign: "center"}}>8h30 - Visite du compté 👀</b>
