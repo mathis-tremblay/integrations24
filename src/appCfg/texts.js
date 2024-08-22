@@ -81,9 +81,6 @@ export const texts = {
                 goupilles de canette. Plus tu en as, plus tu as de chances de traverser le Mordor en un morceau.
             </p>
             <p>
-                Apporte avec toi un contenant opaque pour transporter de la potion.
-            </p>
-            <p>
                 Finalement, va chercher ta LPU (laissez-passer universitaire). C'est important pour suivre le groupe
                 sans avoir à payer tous les trajets de bus. Les informations sont sur le MonPortail.
             </p>
@@ -104,7 +101,7 @@ export const texts = {
             <p>Pour participer aux activités, coche la case <em>Je participe</em> dans l'onglet Horaire pour chaque
                 activité que tu souhaites rejoindre. Par contre, pour participer, il faut <b>payer</b> !</p>
             <p>Tu peux amener tes consommations, mais AUCUN contenant en verre n'est permis.</p>
-            <p>N'oublie pas ta <b>LPU</b>, ta <b>tranche de pain</b>, ton contenant opaque et tes <b>goupilles</b> !</p>
+            <p>N'oublie pas ta <b>LPU</b>, ta <b>tranche de pain</b> et tes <b>goupilles</b> !</p>
             <b>Le comité intégrateur 2024</b> <br/>
             <b>GelGif</b>
         </p>,
@@ -151,7 +148,7 @@ export const texts = {
             <b style={{textAlign: "center"}}>8h15 - Accueil 🚪</b>
             <p style={{textAlign: "center"}}>
                 Arrivez déguisés au milieu du grand axe! On forme les communautés des anneaux et la journée commence!
-                Oublie pas ta LPU, ta tranche de pain, tes goupilles, et apporte un contenant opaque.
+                Oublie pas ta LPU, ta tranche de pain, et apporte un contenant opaque.
                 <br/>"Some days are arder than oders, but those are the one that count the most."  - George St-Pierre
             </p>
             <b style={{textAlign: "center"}}>8h30 - Visite du compté 👀</b>

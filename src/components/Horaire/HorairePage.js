@@ -48,7 +48,7 @@ export default function HorairePage() {
 
     return (
         // Loop to add the 5 days
-        <div style={{ marginTop: "3svh" }}>
+        <div style={{ marginTop: "3vh" }}>
             {days.map((day, index) => (
                 <HoraireDialog
                     key={day.id}

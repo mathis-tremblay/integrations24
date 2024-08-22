@@ -59,7 +59,7 @@ const MenuProps = {
     PaperProps: {
         sx: {
             color: "rgba(85, 136, 38)",
-            maxHeight: '30svh',
+            maxHeight: '30vh',
             '&::-webkit-scrollbar': {
                 width: '10px',
             },
@@ -190,7 +190,7 @@ export default function MessagesAdminPage () {
                         color: "white",
                         border: "solid 2px #ffffff",
                         position: "relative",
-                        marginTop: "1svh",
+                        marginTop: "1vh",
                         maxHeight: "40%",
                     }}
                 >
